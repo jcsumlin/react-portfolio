@@ -1,0 +1,19 @@
+.repo-chips {
+    display: flex;
+    flex-wrap: wrap;
+}
+.chip {
+    margin-left: 5px !important;
+}
+
+.repo-image {
+    display: block !important;
+    margin: auto;
+    border: 5px solid #46b5d1;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.repo-owner {
+    text-align: center;
+}

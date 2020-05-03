@@ -71,8 +71,8 @@ function AboutMe() {
                 anything in between. My goal is to always build products that provide pixel-perfect, performant
                 experiences.</p>
             <p>I graduated from <a href="http://www.auburn.edu/">Auburn University</a> with a Bachelors in
-                Information Systems Management with a focus in Data Analytics and Cyber Security.
-                I have always had a pation or automation and computers in general which led me to studying
+                Information Systems Management and a focus in Data Analytics and Cyber Security.
+                I have always had a passion or automation and computers in general which led me to studying
                 coding both at Auburn and in my free time.
             </p>
         </Grid>
@@ -113,7 +113,7 @@ function useWindowSize() {
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, []); // Empty array ensures that effect is only run on mount and unmount
+    }, [getSize, isClient]); // Empty array ensures that effect is only run on mount and unmount
 
     return windowSize;
 }
