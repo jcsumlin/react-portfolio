@@ -5,6 +5,8 @@ import Paper from "@material-ui/core/Paper";
 import {Button, FormControl} from "@material-ui/core";
 import Alert from '@material-ui/lab/Alert';
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 class Contact extends Component {
     validateEmail(e) {
@@ -48,6 +50,8 @@ class Contact extends Component {
         this.onBlur = this.onBlur.bind(this);
         this.onFocus = this.onFocus.bind(this);
         this.formSubmit = this.formSubmit.bind(this)
+        this.recaptchaRef = React.createRef();
+
 
     }
 
@@ -92,12 +96,15 @@ class Contact extends Component {
 
     formSubmit = (e) => {
         e.preventDefault();
-
+        if (!this.recaptchaRef.current.getValue()) {
+            return this.setState({error: "Please complete the ReCAPTCHA"})
+        }
         this.setState({
             buttonText: 'Sending...',
             success: null,
             error: null
         });
+
         let contactForm = Object.assign({}, this.state.contactForm);
         let data = {
             name: contactForm.name.value,
@@ -108,11 +115,10 @@ class Contact extends Component {
         };
         axios.post("/.netlify/functions/email", data)
             .then(response => {
-                console.log(response.data);
                 return this.setState({buttonText: "Send Message",success: "Your message has been delivered!"}, this.resetForm())
             })
             .catch(() => {
-                this.setState({error: "Could not send message! Please try again later."})
+                this.setState({error: "Could not send message! Please try again later.", buttonText: 'Send Message'})
             });
     };
 
@@ -215,6 +221,13 @@ class Contact extends Component {
                                                    required fullWidth/>
                                     </Grid>
                                     <Grid item>
+                                        <ReCAPTCHA
+                                            ref={this.recaptchaRef}
+                                            size="normal"
+                                            sitekey="6LfBa74ZAAAAAHD_TbL94KQBkGQgvTID5-N8qqK5"
+                                            onErrored={() => {this.setState({error: "Could not send message! Captcha Failed"})}}
+                                            onChange={this.completeReCaptcha}
+                                        />
                                         <Button type="submit" disabled={this.validateForm() === false}
                                                 variant="contained"
                                                 color="primary">{this.state.buttonText}</Button>
@@ -228,6 +241,7 @@ class Contact extends Component {
                                     </Grid>
                                 </Grid>
                             </FormControl>
+
                         </form>
                     </Paper>
                 </Grid>
