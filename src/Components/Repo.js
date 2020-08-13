@@ -3,7 +3,6 @@ import Chip from '@material-ui/core/Chip';
 import StarIcon from '@material-ui/icons/Star';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import CallSplitIcon from '@material-ui/icons/CallSplit';
-// import { fontAwesomeIcon } from '@fontawesome/react-fontawesome'
 
 import Image from "react-bootstrap/Image";
 import {Grid} from "@material-ui/core";
