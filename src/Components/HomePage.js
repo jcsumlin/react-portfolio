@@ -93,6 +93,7 @@ function HeadShot() {
 function useWindowSize() {
     const isClient = typeof window === 'object';
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function getSize() {
         return {
             width: isClient ? window.innerWidth : undefined,
