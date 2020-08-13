@@ -38,7 +38,22 @@ const useStyles = makeStyles((theme) => {
                 boxShadow: '0 3px 5px 2px rgba(21, 25, 101, .3)',
                 color: 'white',
                 height: 60,
-                padding: '0 30px',
+                padding: '0 12px',
+                margin: '0 12px 0 0'
+            },
+            patreon: {
+                backgroundColor: '#f96854',
+                '&:hover': {
+                    backgroundColor: 'white',
+                    color: 'black'
+                }
+            },
+            github: {
+                backgroundColor: '#333',
+                '&:hover': {
+                    backgroundColor: '#f5f5f5',
+                    color: '#333'
+                }
             },
             gridItem: {
                 textAlign: 'left',
@@ -67,7 +82,8 @@ function AboutMe() {
         <Grid item md={4} xs={12} className={classes.gridItem}>
             <h1><span className="nav-numbers">00.</span> About Me</h1>
             <p>Hey there my name is Chat, I am a software engineer from Atlanta, Ga.</p>
-            <p>I enjoy creating things that live on the internet, whether that be websites (like this one!), applications, or
+            <p>I enjoy creating things that live on the internet, whether that be websites (like this one!),
+                applications, or
                 anything in between. My goal is to always write code that is clean, efficient and reusable.</p>
             <p>I graduated from <a href="http://www.auburn.edu/">Auburn University</a> with a Bachelors in
                 Information Systems Management and a focus in both Data Analytics and Cyber Security.
@@ -137,7 +153,15 @@ function HomePage() {
                     <p>I'm a full-stack software engineer based in Atlanta, GA specializing in <br/>
                         building (and occasionally designing) exceptional websites, <br/>
                         applications, and everything in between.</p>
-                    <Link to='/contact'><Button className={classes.root} size={"lg"}>Get In Touch</Button></Link>
+                    <a href='https://www.patreon.com/botboi'><Button className={`${classes.root} ${classes.patreon}`}
+                                                                      size={"md"}>Patreon</Button></a>
+                    <a href='https://github.com/jcsumlin'><Button className={`${classes.root} ${classes.github}`}
+                                                                   size={"md"}>Github</Button></a>
+                    <a href='https://s3.amazonaws.com/chatsumlin.com/Resume.pdf'><Button className={classes.root}
+                                                                                          size={"md"}>Resume</Button></a>
+
+                    <Link to='/contact'><Button className={classes.root} size={"md"}>Get In Touch</Button></Link>
+
                 </Grid>
             </Grid>
             <Grid container className={classes.aboutMe} spacing={3}>
