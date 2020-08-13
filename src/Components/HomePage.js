@@ -66,12 +66,11 @@ function AboutMe() {
     return (
         <Grid item md={4} xs={12} className={classes.gridItem}>
             <h1><span className="nav-numbers">00.</span> About Me</h1>
-            <p>Hey there my name is Chat, I am a software engineer based in Atlanta, Ga.</p>
-            <p>I enjoy creating things that live on the internet, whether that be websites, applications, or
-                anything in between. My goal is to always build products that provide pixel-perfect, performant
-                experiences.</p>
+            <p>Hey there my name is Chat, I am a software engineer from Atlanta, Ga.</p>
+            <p>I enjoy creating things that live on the internet, whether that be websites (like this one!), applications, or
+                anything in between. My goal is to always write code that is clean, efficient and reusable.</p>
             <p>I graduated from <a href="http://www.auburn.edu/">Auburn University</a> with a Bachelors in
-                Information Systems Management and a focus in Data Analytics and Cyber Security.
+                Information Systems Management and a focus in both Data Analytics and Cyber Security.
                 I have always had a passion or automation and computers in general which led me to studying
                 coding both at Auburn and in my free time.
             </p>

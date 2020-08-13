@@ -39,6 +39,11 @@ const repositories = [
         owner: "jcsumlin",
         avatar_url: ""
     },
+    {
+        name: 'discord-ban-appeal',
+        owner: "jcsumlin",
+        avatar_url: ""
+    },
 ];
 
 function getRepo(owner, name) {
