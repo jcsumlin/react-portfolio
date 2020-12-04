@@ -158,7 +158,7 @@ class Contact extends Component {
     render() {
         return (
             <Grid containe>
-                <Grid item xs={6} className="m-4">
+                <Grid item xs={12} md={6} className="m-4">
                     <Paper className="p-5">
                         <h2>Want to get in touch?</h2>
                         <p>I'm always looking for the next big opportunity for my career and I would love to hear from
@@ -166,14 +166,14 @@ class Contact extends Component {
                         <form onSubmit={this.formSubmit}>
                             <FormControl fullWidth>
                                 <Grid container spacing={3}>
-                                    <Grid item xs={6}>
+                                    <Grid item xs={12} md={6}>
                                         <TextField onChange={this.handleChange}
                                                    name="name"
                                                    label="Your Name"
                                                    value={this.state.contactForm.name.value}
                                                    fullWidth required/>
                                     </Grid>
-                                    <Grid item xs={6}>
+                                    <Grid item xs={12} md={6}>
                                         <Grid container spacing={1} alignItems="flex-end">
                                             <TextField
                                                 error={!this.state.contactForm.email.valid}
@@ -186,7 +186,7 @@ class Contact extends Component {
                                                 required fullWidth/>
                                         </Grid>
                                     </Grid>
-                                    <Grid item xs={6}>
+                                    <Grid item xs={12} md={6}>
                                         <Grid container spacing={1} alignItems="flex-end">
                                             <TextField
                                                 error={!this.state.contactForm.phone.valid}
@@ -199,7 +199,7 @@ class Contact extends Component {
                                                 required fullWidth/>
                                         </Grid>
                                     </Grid>
-                                    <Grid item xs={6}>
+                                    <Grid item xs={12} md={6}>
                                         <Grid container spacing={1} alignItems="flex-end">
                                             <TextField
                                                 onFocus={this.onFocus}
