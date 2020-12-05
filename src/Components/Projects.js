@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import axios from 'axios';
 import Repo from "./Repo";
 import CircularProgress from "@material-ui/core/CircularProgress";
-
+const defaultAvatarUrl = "https://0.gravatar.com/avatar/91fc1c19f3633fbe104bc7788f9ead00";
 const repositories = [
     {
         name: 'Peribot',
@@ -94,7 +94,7 @@ function Projects(props) {
                                                     setLoading(false);
                                                 });
                                         }}>
-                                            <img src={repo.avatar_url} alt={repo.owner}/>
+                                            <img  width={32} height={32} src={repo.avatar_url ? repo.avatar_url : defaultAvatarUrl} alt={repo.owner}/>
                                             <span>{repo.name + "/" + repo.owner}</span>
                                         </Link>
                                     </div>
