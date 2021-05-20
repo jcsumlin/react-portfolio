@@ -44,6 +44,11 @@ const repositories = [
         owner: "jcsumlin",
         avatar_url: ""
     },
+    {
+        name: 'thanks',
+        owner: "jcsumlin",
+        avatar_url: ""
+    },
 ];
 
 function getRepo(owner, name) {
