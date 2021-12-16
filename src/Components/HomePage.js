@@ -157,7 +157,7 @@ function HomePage() {
                                                                       size={"md"}>Patreon</Button></a>
                     <a href='https://github.com/jcsumlin'><Button className={`${classes.root} ${classes.github}`}
                                                                    size={"md"}>Github</Button></a>
-                    <a href='https://s3.amazonaws.com/chatsumlin.com/Resume.pdf'><Button className={classes.root}
+                    <a href='https://docs.google.com/document/d/1ed9wP54RoQ8yO6AnsY7oqZtjbIovbQ7k_PR1pZ1yJB4/edit?usp=sharing'><Button className={classes.root}
                                                                                           size={"md"}>Resume</Button></a>
 
                     <Link to='/contact'><Button className={classes.root} size={"md"}>Get In Touch</Button></Link>
