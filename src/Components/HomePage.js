@@ -153,11 +153,9 @@ function HomePage() {
                     <p>I'm a full-stack software engineer based in Atlanta, GA specializing in <br/>
                         building (and occasionally designing) exceptional websites, <br/>
                         applications, and everything in between.</p>
-                    <a href='https://www.patreon.com/botboi'><Button className={`${classes.root} ${classes.patreon}`}
-                                                                      size={"md"}>Patreon</Button></a>
                     <a href='https://github.com/jcsumlin'><Button className={`${classes.root} ${classes.github}`}
                                                                    size={"md"}>Github</Button></a>
-                    <a href='https://docs.google.com/document/d/1ed9wP54RoQ8yO6AnsY7oqZtjbIovbQ7k_PR1pZ1yJB4/edit?usp=sharing'><Button className={classes.root}
+                    <a href='https://nextcloud.chatsumlin.com/s/dji56pePfDqNi2e'><Button className={classes.root}
                                                                                           size={"md"}>Resume</Button></a>
 
                     <Link to='/contact'><Button className={classes.root} size={"md"}>Get In Touch</Button></Link>
