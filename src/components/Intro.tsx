@@ -1,3 +1,9 @@
+import { Button } from "./ui/button";
+import Mastodon from "@/assets/Mastodon_Logotype_(Simple).svg?react"
+import Github from "@/assets/github.svg?react"
+import LinkedIn from "@/assets/linkedin-svgrepo-com.svg?react"
+import { File } from "lucide-react";
+
 export default function Intro() {
     return (
         <div>
@@ -34,6 +40,18 @@ export default function Intro() {
                         building (and occasionally designing) exceptional websites,
                         applications, and everything in between.
                     </p>
+                    <Button variant="ghost">
+                        <Github fill="#FFFFFF" />
+                    </Button>
+                    <Button variant="ghost">
+                        <Mastodon />
+                    </Button>
+                    <Button variant="ghost">
+                        <LinkedIn />
+                    </Button>
+                    <Button variant="ghost">
+                        <File />
+                    </Button>
                 </div>
             </span>
         </div>

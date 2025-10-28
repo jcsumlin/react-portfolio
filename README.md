@@ -1,75 +1,34 @@
-# React + TypeScript + Vite
+# Chat Sumlin | Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tasks
+- [x] Setup Vite
+- [x] Setup Eslint
+- [x] UI with ShadCN
+- [x] TanStack Router
+- [ ] Configure CI/CD for:
+  - [ ] Builds
+  - [ ] Dependency monitoring
+  - [ ] Contact me email form
+  - [ ] Automated tests (unit/integration)
+  - [ ] Linting and formatting checks
+  - [ ] Preview deployments for pull requests
+  - [ ] Enable Captcha for bot protection
+  - [ ] Multi deployment scripts
+- [ ] Create Blog thats built from markdown 
+- [ ] Add dark/light theme toggle
+- [ ] Responsive design for mobile/tablet
+- [ ] SEO optimization
+- [ ] Accessibility improvements (a11y)
+- [ ] Add About Me section
+- [ ] Projects showcase with filtering
+- [ ] Skills & technologies section
+- [ ] Downloadable resume/CV
+- [ ] Social media links integration
+- [ ] Animated transitions between pages
+- [ ] Add testimonials or references
+- [ ] Analytics integration (e.g., Google Analytics)
+- [ ] Performance optimization (Lighthouse)
+- [ ] Custom 404 page
+- [ ] Add favicon and meta tags
+- [ ] Deploy to production (e.g., Vercel, Netlify)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

@@ -1,3 +1,5 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import { ReactNode } from 'react';
 
 export type TimelineSize = 'sm' | 'md' | 'lg';

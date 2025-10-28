@@ -162,26 +162,6 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                 Get in touch
               </Button>
             </Link>
-            <a href="https://github.com/jcsumlin" target='_blank' rel='noopener noreferrer'>
-              <Button
-                size="icon"
-                className="text-sm font-medium px-4 h-9 rounded-md shadow-sm hover:bg-accent hover:fill-black fill-white"
-                variant="ghost"
-
-              >
-                <Github className="hover:fill-inherit fill-inherit" />
-              </Button>
-            </a>
-            <a href="https://www.linkedin.com/in/chatsumlin" target='_blank' rel='noopener noreferrer'>
-              <Button
-                size="icon"
-                className="text-sm font-medium px-4 h-9 rounded-md shadow-sm hover:bg-accent hover:fill-black fill-white"
-                variant="ghost"
-
-              >
-                <Linkedin className="hover:fill-inherit fill-inherit" />
-              </Button>
-            </a>
           </div>
         </div>
       </header>
