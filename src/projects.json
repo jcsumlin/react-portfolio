@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "title": "E-commerce Platform",
+    "description": "A full-stack e-commerce platform with React, Node.js, and MongoDB. Features include user authentication, product filtering, cart functionality, and payment processing.",
+    "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+    "imageUrl": "https://placehold.co/600x400?text=E-commerce+Project",
+    "githubUrl": "https://github.com/yourusername/ecommerce",
+    "liveUrl": "https://your-ecommerce-site.com",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Task Management App",
+    "description": "A productivity app for managing tasks and projects with drag-and-drop functionality.",
+    "technologies": ["React", "Redux", "Firebase"],
+    "imageUrl": "https://placehold.co/600x400?text=Task+App",
+    "githubUrl": "https://github.com/yourusername/task-app"
+  },
+  {
+    "id": 3,
+    "title": "Weather Dashboard",
+    "description": "A weather application that displays current and forecasted weather using a third-party API.",
+    "technologies": ["JavaScript", "API Integration", "CSS"],
+    "imageUrl": "https://placehold.co/600x400?text=Weather+App",
+    "githubUrl": "https://github.com/yourusername/weather-app"
+  },
+  {
+    "id": 4,
+    "title": "Portfolio Website",
+    "description": "A responsive portfolio website built with React and Tailwind CSS.",
+    "technologies": ["React", "Tailwind CSS", "Framer Motion"],
+    "imageUrl": "https://placehold.co/600x400?text=Portfolio",
+    "githubUrl": "https://github.com/yourusername/portfolio"
+  }
+]

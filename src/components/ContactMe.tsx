@@ -1,0 +1,81 @@
+import { useForm } from "react-hook-form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
+import { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
+
+const formSchema = z.object({
+    name: z.string().min(2, "Name must be at least 2 characters"),
+    email: z.email("Invalid email address"),
+    message: z.string().min(10, "Message must be at least 10 characters"),
+    organization: z.string().optional(), // Honeypot field
+})
+
+export default function ContactMe() {
+    const methods = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: '',
+            email: '',
+            message: '',
+            organization: '',  // Honeypot field
+        },
+    })
+
+    const onSubmit = (data: z.infer<typeof formSchema>) => {
+        console.log(data);
+    }
+
+    return (
+        <span className="mt-4 px-4 md:px-8">
+            <Form {...methods}>
+                <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField name={"name"} control={methods.control} render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Name</FormLabel>
+                            <FormControl>
+                                <Input placeholder="Your Name" {...field} className="placeholder:text-white" />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
+                    <FormField name={"email"} control={methods.control} render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                                <Input placeholder="Your Email" {...field} className="placeholder:text-white" />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
+                    <FormField name={"message"} control={methods.control} render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Message</FormLabel>
+                            <FormControl>
+                                <Textarea
+                                    {...field}
+                                    placeholder="Add any additional comments"
+                                    className="resize-none placeholder:text-white"
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
+                    <FormField name="organization" control={methods.control} render={({ field }) => (
+                        <FormItem className="absolute left-[-9999px] w-[1px] h-[1px] overflow-hidden">
+                            <FormLabel>Organization</FormLabel>
+                            <FormControl>
+                                <Input tabIndex={-1} autoComplete="off" aria-hidden="true" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
+                    <Button type="submit">Send Message</Button>
+                </form>
+            </Form>
+
+        </span >
+    )
+}
