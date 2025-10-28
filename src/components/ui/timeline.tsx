@@ -218,7 +218,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
                 {/* Timeline dot and connector */}
                 <div className="flex flex-col items-center">
                     <div className="relative z-10">
-                        <TimelineIcon icon={icon} color={iconColor} status={status} iconSize={iconsize} />
+                        <TimelineIcon icon={icon} color={iconColor} iconSize={iconsize} />
                     </div>
                     {showConnector && (
                         <div className="h-16 w-0.5 bg-border mt-2" />
@@ -368,12 +368,10 @@ TimelineTitle.displayName = 'TimelineTitle';
 const TimelineIcon = ({
     icon,
     color = 'primary',
-    status = 'completed',
     iconSize = 'md',
 }: {
     icon?: React.ReactNode;
     color?: 'primary' | 'secondary' | 'muted' | 'accent' | 'destructive';
-    status?: 'completed' | 'in-progress' | 'pending' | 'error';
     iconSize?: 'sm' | 'md' | 'lg' | 'full';
 }) => {
     const sizeClasses = {

@@ -14,8 +14,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-import Github from '@/assets/github.svg?react';
-import { Linkedin, MenuIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react';
 import { Link, useLocation } from '@tanstack/react-router';
 
 // Types
