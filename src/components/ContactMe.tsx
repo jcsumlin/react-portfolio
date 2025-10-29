@@ -5,13 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
-
-const formSchema = z.object({
-    name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-    email: z.email({ message: "Invalid email address" }),
-    message: z.string().min(10, { message: "Message must be at least 10 characters" }),
-    organization: z.string().optional(), // Honeypot field
-})
+import { formSchema } from "@/schemas/contactMe";
 
 export default function ContactMe() {
     const methods = useForm<z.infer<typeof formSchema>>({

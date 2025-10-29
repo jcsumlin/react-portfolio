@@ -4,6 +4,7 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 import svgr from "vite-plugin-svgr";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
   plugins: [
@@ -23,7 +24,7 @@ export default defineConfig({
         plugins: [['babel-plugin-react-compiler']],
       },
     }),
-
+    cloudflare(),
   ],
   resolve: {
     alias: {

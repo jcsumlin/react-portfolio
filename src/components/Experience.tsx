@@ -1,8 +1,8 @@
-import { Timeline, TimelineItem } from '@/components/ui/timeline'
-import { Check } from 'lucide-react'
+import { Timeline, TimelineDescription, TimelineHeader, TimelineItem, TimelineSubHeader, TimelineTime, TimelineTitle } from '@/components/ui/timeline'
 import experience from '@/experience.json'
 import { format, parse } from 'date-fns'
 import SectionTitle from './SectionTitle';
+import { kebabCase } from 'lodash';
 
 function getDisplayDate(start_date: string, end_date: string) {
     const startDateObject = parse(start_date, 'MM-dd-yyyy', new Date());
@@ -15,17 +15,19 @@ export default function Experience() {
         <div className="mt-4 min-h-screen" id="experience">
             <SectionTitle title="Experience" />
             <Timeline>
-                {experience.map((job) => (
-                    <TimelineItem
-                        className='!text-white'
-                        key={job.company + job.title}
-                        date={getDisplayDate(job.start_date, job.end_date)}
-                        title={`${job.title} at ${job.company}`}
-                        // description={job.description || ''}
-                        icon={job.logo ? <img src={job.logo} alt={`${job.company} logo`} className="rounded-full" /> : <Check />}
-                        iconsize='full'
-                        status={job.end_date.toLowerCase() === 'present' ? 'in-progress' : 'completed'}
-                    />
+                {experience.map((item) => (
+                    <TimelineItem key={kebabCase(item.title + '-' + item.company)}>
+                        <TimelineHeader>
+                            <TimelineTime>{getDisplayDate(item.start_date, item.end_date)}</TimelineTime>
+                            <div>
+                                <TimelineTitle>{item.company}</TimelineTitle>
+                                <TimelineSubHeader>{item.title}</TimelineSubHeader>
+                            </div>
+                        </TimelineHeader>
+                        {item.description && (
+                            <TimelineDescription>{item.description}</TimelineDescription>
+                        )}
+                    </TimelineItem>
                 ))}
             </Timeline>
         </div>
