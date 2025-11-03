@@ -1,7 +1,5 @@
-import { type ExportedHandler, Response } from "@cloudflare/workers-types/experimental";
-
 export default {
-    fetch(request) {
+    async fetch(request: Request): Promise<Response> {
         const url = new URL(request.url);
 
         if (url.pathname.startsWith("/api/")) {
