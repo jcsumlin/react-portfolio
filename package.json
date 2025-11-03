@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "preview": "vite preview",
     "email": "email dev",
-    "deploy": "npm run build && wrangler deploy"
+    "generate-types": "wrangler types",
+    "type-check": "generate-types && tsc",
+    "deploy": "pnpm run build && wrangler deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -43,7 +45,7 @@
     "@react-email/preview-server": "4.3.2",
     "@tanstack/router-plugin": "^1.132.47",
     "@types/lodash": "^4.17.20",
-    "@types/node": "^24.7.0",
+    "@types/node": "^24.10.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",

@@ -9,7 +9,7 @@ export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
-    plugins: { 'react-hooks': reactHooks },
+    // plugins: { 'react-hooks': reactHooks },
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
