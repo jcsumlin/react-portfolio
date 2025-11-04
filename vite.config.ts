@@ -1,3 +1,4 @@
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { tanstackRouter } from '@tanstack/router-plugin/vite'
@@ -13,22 +14,27 @@ export default defineConfig({
         plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
       },
     }),
-    tailwindcss(),
-    // Please make sure that '@tanstack/router-plugin' is passed before '@vitejs/plugin-react'
+    tailwindcss(), // Please make sure that '@tanstack/router-plugin' is passed before '@vitejs/plugin-react'
     tanstackRouter({
       target: 'react',
       autoCodeSplitting: true,
-    }),
-    react({
+    }), react({
       babel: {
         plugins: [['babel-plugin-react-compiler']],
       },
     }),
     cloudflare(),
-  ],
+    sentryVitePlugin({
+      org: "chat-sumlin",
+      project: "portfolio-cloud-worker"
+    })],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    sourcemap: true
+  }
 })

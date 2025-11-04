@@ -10,8 +10,9 @@
     "preview": "vite preview",
     "email": "email dev",
     "generate-types": "wrangler types",
-    "type-check": "generate-types && tsc",
-    "deploy": "pnpm run build && wrangler deploy"
+    "type-check": "pnpm generate-types && tsc",
+    "deploy": "pnpm run build && wrangler deploy",
+    "sourcemaps": "npx @sentry/wizard@latest -i sourcemaps --saas --org chat-sumlin --project portfolio-cloud-worker"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -20,6 +21,8 @@
     "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-email/components": "^0.5.7",
+    "@sentry/cloudflare": "^10.22.0",
+    "@sentry/vite-plugin": "^4.6.0",
     "@svgr/plugin-svgo": "^8.1.0",
     "@tailwindcss/vite": "^4.1.14",
     "@tanstack/react-router": "^1.132.47",
