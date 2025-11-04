@@ -11,15 +11,12 @@ const projects: Project[] = projectsData.filter((project) => !project.featured);
 
 export default function Projects() {
   return (
-    <div
-      className="mt-4 min-h-screen px-4 md:px-8 py-16 bg-[#222831]"
-      id="projects"
-    >
+    <div className="mt-4 min-h-screen px-4 md:px-8 py-16" id="projects">
       <SectionTitle title="Projects" />
       <p className="text-lg text-gray-300 mb-12 max-w-3xl">
         Here are a few projects I've worked on recently. Want to see more?{' '}
         <a
-          href="#contact"
+          href="/contact"
           className="text-primary hover:text-primary/90 transition-colors"
         >
           Contact me
