@@ -1,8 +1,8 @@
-import { Button } from "./ui/button";
-import Mastodon from "@/assets/Mastodon_Logotype_(Simple).svg?react";
-import Github from "@/assets/github.svg?react";
-import LinkedIn from "@/assets/linkedin-svgrepo-com.svg?react";
-import { File } from "lucide-react";
+import { Button } from './ui/button';
+import Mastodon from '@/assets/mastodon.svg?react';
+import Github from '@/assets/github.svg?react';
+import LinkedIn from '@/assets/linkedin.svg?react';
+import { File } from 'lucide-react';
 
 export default function Intro() {
   return (
@@ -14,7 +14,7 @@ export default function Intro() {
           className="w-48 h-48 md:w-72 md:h-72 rounded-full mx-auto mb-8 mt-16 shadow-lg animate-[pulse_2s_ease-in-out_infinite] transition-transform duration-500 hover:scale-105"
           style={{
             // boxShadow: '0 0 0 8px #22d3ee, 0 0 24px 0 #22d3ee80',
-            animation: "borderGlow 2s infinite alternate",
+            animation: 'borderGlow 2s infinite alternate',
           }}
         />
         <div className="w-1/2 my-auto">
@@ -28,7 +28,7 @@ export default function Intro() {
               <span
                 className="ml-1 inline-block align-bottom text-cyan-400"
                 style={{
-                  animation: "blink 0.75s steps(1, end) infinite",
+                  animation: 'blink 0.75s steps(1, end) infinite',
                 }}
               >
                 |

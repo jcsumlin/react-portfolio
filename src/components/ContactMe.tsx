@@ -1,27 +1,27 @@
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import {
-  Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Textarea } from "./ui/textarea";
-import { formSchema } from "@/schemas/contactMe";
+} from '@/components/ui/form/form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { formSchema } from '@/schemas/contactMe';
+import { Form } from '@/components/ui/form/useFormField';
 
 export default function ContactMe() {
   const methods = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-      organization: "", // Honeypot field
+      name: '',
+      email: '',
+      message: '',
+      organization: '', // Honeypot field
     },
   });
 
@@ -34,7 +34,7 @@ export default function ContactMe() {
       <Form {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
-            name={"name"}
+            name={'name'}
             control={methods.control}
             render={({ field }) => (
               <FormItem>
@@ -51,7 +51,7 @@ export default function ContactMe() {
             )}
           />
           <FormField
-            name={"email"}
+            name={'email'}
             control={methods.control}
             render={({ field }) => (
               <FormItem>
@@ -68,7 +68,7 @@ export default function ContactMe() {
             )}
           />
           <FormField
-            name={"message"}
+            name={'message'}
             control={methods.control}
             render={({ field }) => (
               <FormItem>

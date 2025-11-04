@@ -1,6 +1,6 @@
-import type { Project } from "@/types";
-import SectionTitle from "./SectionTitle";
-import projectsData from "@/projects.json";
+import type { Project } from '@/types';
+import SectionTitle from './SectionTitle';
+import projectsData from '@/projects.json';
 
 // This could be moved to a separate types file
 
@@ -17,7 +17,7 @@ export default function Projects() {
     >
       <SectionTitle title="Projects" />
       <p className="text-lg text-gray-300 mb-12 max-w-3xl">
-        Here are a few projects I've worked on recently. Want to see more?{" "}
+        Here are a few projects I've worked on recently. Want to see more?{' '}
         <a
           href="#contact"
           className="text-primary hover:text-primary/90 transition-colors"

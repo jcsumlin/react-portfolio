@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { useEffect, useState, useRef } from "react";
+import * as React from 'react';
+import { Button } from '@/components/ui/button';
+import { useEffect, useState, useRef } from 'react';
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+} from '@/components/ui/navigation-menu/navigation-menu';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { MenuIcon } from "lucide-react";
-import { Link, useLocation } from "@tanstack/react-router";
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
+import { MenuIcon } from 'lucide-react';
+import { Link, useLocation } from '@tanstack/react-router';
 
 // Types
-export interface Navbar01NavLink {
+interface Navbar01NavLink {
   href: string;
   label: string;
   active?: boolean;
 }
 
-export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
+interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
   navigationLinks: Navbar01NavLink[];
   logo?: React.ReactNode;
   logoHref?: string;
@@ -60,7 +60,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     const combinedRef = React.useCallback(
       (node: HTMLElement | null) => {
         containerRef.current = node;
-        if (typeof ref === "function") {
+        if (typeof ref === 'function') {
           ref(node);
         } else if (ref) {
           ref.current = node;
@@ -73,7 +73,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       <header
         ref={combinedRef}
         className={cn(
-          "sticky top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6 [&_*]:no-underline",
+          'sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/60 px-4 md:px-6 **:no-underline',
           className,
         )}
         {...props}
@@ -102,10 +102,10 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                           <NavigationMenuItem key={index} className="w-full">
                             <button
                               className={cn(
-                                "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent cursor-pointer no-underline",
+                                'flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent cursor-pointer no-underline',
                                 location.pathname === link.href
-                                  ? "bg-accent"
-                                  : "text-foreground/80",
+                                  ? 'bg-accent'
+                                  : 'text-foreground/80',
                               )}
                             >
                               {link.label}
@@ -129,10 +129,10 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                         <NavigationMenuItem key={index}>
                           <button
                             className={cn(
-                              "hover:text-accent-foreground group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent focus:bg-accent focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
+                              'hover:text-accent-foreground group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent focus:bg-accent focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline',
                               location.pathname === link.href
-                                ? "bg-accent text-accent-foreground"
-                                : "",
+                                ? 'bg-accent text-accent-foreground'
+                                : '',
                             )}
                           >
                             {link.label}
@@ -163,4 +163,4 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
   },
 );
 
-Navbar01.displayName = "Navbar01";
+Navbar01.displayName = 'Navbar01';

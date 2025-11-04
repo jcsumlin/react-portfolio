@@ -1,5 +1,5 @@
-import { Heading } from "@react-email/components";
-import Template from "./template";
+import { Heading } from '@react-email/components';
+import Template from './template';
 
 export default function ContactFormSubmission({
   name,

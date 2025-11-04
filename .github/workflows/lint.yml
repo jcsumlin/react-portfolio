@@ -1,0 +1,24 @@
+name: Lint project
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Ubuntu/Node v20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts
+      - name: Run knip
+        run: pnpm run knip
+      - name: Run lint
+        run: pnpm run lint
+      - name: Run type-check
+        run: pnpm run type-check
+      - name: Run prettier check
+        run: pnpm run format

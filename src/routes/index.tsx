@@ -1,9 +1,9 @@
-import Experience from "@/components/Experience";
-import Intro from "@/components/Intro";
+import Experience from '@/components/Experience';
+import Intro from '@/components/Intro';
 // import Projects from '@/components/Projects'
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute('/')({
   component: RouteComponent,
 });
 

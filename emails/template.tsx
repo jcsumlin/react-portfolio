@@ -5,7 +5,7 @@ import {
   Head,
   Font,
   Container,
-} from "@react-email/components";
+} from '@react-email/components';
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
@@ -20,8 +20,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
             fontFamily="Roboto"
             fallbackFontFamily="Verdana"
             webFont={{
-              url: "https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2",
-              format: "woff2",
+              url: 'https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2',
+              format: 'woff2',
             }}
             fontWeight={400}
             fontStyle="normal"

@@ -1,5 +1,5 @@
-import { Button, Heading, Img, Hr } from "@react-email/components";
-import Template from "./template";
+import { Button, Heading, Img, Hr } from '@react-email/components';
+import Template from './template';
 
 export default function ThankYouEmail({ name }: { name: string }) {
   return (

@@ -1,16 +1,16 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
 // Import the generated route tree
-import { routeTree } from "./routeTree.gen";
-import { createRouter, RouterProvider } from "@tanstack/react-router";
-import { scan } from "react-scan"; // must be imported before React and React DOM
+import { routeTree } from './routeTree.gen';
+import { createRouter, RouterProvider } from '@tanstack/react-router';
+import { scan } from 'react-scan'; // must be imported before React and React DOM
 
 // Create a new router instance
 const router = createRouter({ routeTree });
 
 // Register the router instance for type safety
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router;
   }
@@ -21,7 +21,7 @@ scan({
 });
 
 // Render the app
-const rootElement = document.getElementById("root")!;
+const rootElement = document.getElementById('root')!;
 if (!rootElement.innerHTML) {
   const root = createRoot(rootElement);
   root.render(
