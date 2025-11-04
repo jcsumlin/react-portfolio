@@ -4,7 +4,7 @@ import {
   sendThankYouEmail,
   sendContactNotificationEmail,
 } from '../functions/send_email';
-import { getSentryContext } from './helpers';
+import getSentryContext from './helpers';
 
 export default {
   async fetch(

@@ -1,4 +1,4 @@
-export function getSentryContext(request: Request) {
+export default function getSentryContext(request: Request) {
   return {
     user: {
       ip_address: request.headers.get('cf-connecting-ip') || 'unknown',
