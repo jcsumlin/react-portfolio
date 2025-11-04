@@ -43,3 +43,5 @@ export interface Project {
   liveUrl?: string;
   featured?: boolean;
 }
+
+type Theme = 'dark' | 'light' | 'system';

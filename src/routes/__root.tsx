@@ -13,13 +13,13 @@ const navigationLinks = [
 
 function RootComponent() {
   return (
-    <>
+    <div className="bg-white dark:bg-slate-950 text-foreground min-h-screen">
       <Navbar01
         className="!bg-transparent text-gray-300 border-0 accent-green-400"
         navigationLinks={navigationLinks}
       />
       <Outlet />
       <TanStackRouterDevtools />
-    </>
+    </div>
   );
 }

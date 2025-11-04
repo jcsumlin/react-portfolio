@@ -1,10 +1,17 @@
-import { Button } from './ui/button';
+import {
+  Button,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '@/components/ui';
 import Mastodon from '@/assets/mastodon.svg?react';
 import Github from '@/assets/github.svg?react';
 import LinkedIn from '@/assets/linkedin.svg?react';
 import { File } from 'lucide-react';
+import useTheme from '@/hooks/useTheme';
 
 export default function Intro() {
+  const { theme } = useTheme();
   return (
     <div>
       <span className="h-auto w-full flex flex-col md:flex-row items-center md:items-start md:space-x-12 text-center md:text-left">
@@ -47,36 +54,65 @@ export default function Intro() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="ghost">
-              <Github fill="#FFFFFF" />
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost">
+                  <Github fill={theme === 'dark' ? '#FFFFFF' : '#000000'} />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <strong>View the source code on GitHub!</strong>
+              </TooltipContent>
+            </Tooltip>
           </a>
           <a
             href="https://mecha.garden/@chatgpt"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="ghost">
-              <Mastodon />
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost">
+                  <Mastodon />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <strong>I'm also on Mastodon!</strong>
+              </TooltipContent>
+            </Tooltip>
           </a>
+
           <a
             href="https://www.linkedin.com/in/chatsumlin"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="ghost">
-              <LinkedIn />
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost">
+                  <LinkedIn />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <strong>Connect with me on LinkedIn!</strong>
+              </TooltipContent>
+            </Tooltip>
           </a>
           <a
             href="https://github.com/jcsumlin/react-portfolio"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="ghost">
-              <File />
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost">
+                  <File />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <strong>View the source code on GitHub!</strong>
+              </TooltipContent>
+            </Tooltip>
           </a>
         </div>
       </span>

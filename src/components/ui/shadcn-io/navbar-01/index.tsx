@@ -16,6 +16,7 @@ import {
 import { cn } from '@/lib/utils';
 import { MenuIcon } from 'lucide-react';
 import { Link, useLocation } from '@tanstack/react-router';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 // Types
 interface Navbar01NavLink {
@@ -129,7 +130,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                         <NavigationMenuItem key={index}>
                           <button
                             className={cn(
-                              'hover:text-accent-foreground group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent focus:bg-accent focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline',
+                              'hover:text-accent-foreground text-muted-foreground group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent focus:bg-accent focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline',
                               location.pathname === link.href
                                 ? 'bg-accent text-accent-foreground'
                                 : '',
@@ -151,11 +152,12 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                className="text-sm text-muted-foreground font-medium hover:bg-accent hover:text-accent-foreground"
               >
                 Get in touch
               </Button>
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </header>

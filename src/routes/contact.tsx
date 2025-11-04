@@ -12,7 +12,7 @@ function RouteComponent() {
       aria-labelledby="contact-heading"
     >
       <section
-        className="w-full max-w-2xl bg-gray-950 rounded-xl shadow-lg p-8 md:p-12 flex flex-col gap-8 border border-gray-800"
+        className="w-full max-w-2xl rounded-xl shadow-lg p-8 md:p-12 flex flex-col gap-8 border border-gray-800"
         role="region"
         aria-label="Contact form section"
       >
