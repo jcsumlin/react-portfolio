@@ -1,6 +1,7 @@
 import type { Project } from '@/types';
 import SectionTitle from './SectionTitle';
 import projectsData from '@/projects.json';
+import { Link } from '@tanstack/react-router';
 
 // This could be moved to a separate types file
 
@@ -14,20 +15,20 @@ export default function Projects() {
     <div className="mt-4 min-h-screen px-4 md:px-8 py-16" id="projects">
       <SectionTitle title="Projects" />
       <p className="text-lg text-gray-300 mb-12 max-w-3xl">
-        Here are a few projects I've worked on recently. Want to see more?{' '}
-        <a
-          href="/contact"
+        Here are a few projects I've worked on recently. Want to learn more?{' '}
+        <Link
+          to="/contact"
           className="text-primary hover:text-primary/90 transition-colors"
         >
           Contact me
-        </a>
+        </Link>
         .
       </p>
 
       {/* Featured Project */}
       {featuredProject && (
         <div className="mb-16">
-          <h3 className="text-sm uppercase tracking-wider text-cyan-300 mb-4">
+          <h3 className="text-sm uppercase tracking-wider text-primary mb-4">
             Featured Project
           </h3>
           <div className="bg-[#2D3440] rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:shadow-2xl hover:border-cyan-700 transition-all duration-300 transform hover:-translate-y-1">
@@ -55,7 +56,7 @@ export default function Projects() {
                     {featuredProject.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="bg-[#1B1F24] text-cyan-300 text-xs px-3 py-1 rounded-full border border-cyan-800"
+                        className="bg-[#1B1F24] text-primary text-xs px-3 py-1 rounded-full border border-cyan-800"
                       >
                         {tech}
                       </span>
@@ -79,7 +80,7 @@ export default function Projects() {
                       href={featuredProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-600 transition-colors"
+                      className="px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors"
                     >
                       Live Demo
                     </a>

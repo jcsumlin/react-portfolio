@@ -18,7 +18,7 @@ function getDisplayDate(start_date: string, end_date: string) {
     end_date.toLowerCase() === 'present'
       ? null
       : parse(end_date, 'MM-dd-yyyy', new Date());
-  return `${format(startDateObject, 'MMMM yyyy')} - ${endDateObject ? format(endDateObject, 'MMMM yyyy') : 'Present'}`;
+  return `${format(startDateObject, 'MMM yyyy')} - ${endDateObject ? format(endDateObject, 'MMM yyyy') : 'Present'}`;
 }
 
 export default function Experience() {

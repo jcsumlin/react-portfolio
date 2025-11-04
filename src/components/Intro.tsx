@@ -42,18 +42,42 @@ export default function Intro() {
             designing) exceptional websites, applications, and everything in
             between.
           </p>
-          <Button variant="ghost">
-            <Github fill="#FFFFFF" />
-          </Button>
-          <Button variant="ghost">
-            <Mastodon />
-          </Button>
-          <Button variant="ghost">
-            <LinkedIn />
-          </Button>
-          <Button variant="ghost">
-            <File />
-          </Button>
+          <a
+            href="https://github.com/jcsumlin/react-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="ghost">
+              <Github fill="#FFFFFF" />
+            </Button>
+          </a>
+          <a
+            href="https://mecha.garden/@chatgpt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="ghost">
+              <Mastodon />
+            </Button>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/chatsumlin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="ghost">
+              <LinkedIn />
+            </Button>
+          </a>
+          <a
+            href="https://github.com/jcsumlin/react-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="ghost">
+              <File />
+            </Button>
+          </a>
         </div>
       </span>
     </div>
