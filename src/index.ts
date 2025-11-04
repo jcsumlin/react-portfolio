@@ -1,5 +1,5 @@
 export default {
-    fetch() {
-        return new Response(`Running in ${navigator.userAgent}!`);
-    },
+  fetch() {
+    return new Response(`Running in ${navigator.userAgent}!`);
+  },
 };

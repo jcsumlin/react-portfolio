@@ -1,9 +1,7 @@
 type Props = {
-    title: string
-}
+  title: string;
+};
 
 export default function SectionTitle({ title }: Props) {
-    return (
-        <h2 className="text-4xl font-bold mb-4">{title}</h2>
-    )
+  return <h2 className="text-4xl font-bold mb-4">{title}</h2>;
 }

@@ -1,6 +1,7 @@
 # Chat Sumlin | Portfolio Website
 
 ## Tasks
+
 - [x] Setup Vite
 - [x] Setup Eslint
 - [x] UI with ShadCN
@@ -14,7 +15,7 @@
   - [ ] Preview deployments for pull requests
   - [ ] Enable Captcha for bot protection
   - [ ] Multi deployment scripts
-- [ ] Create Blog thats built from markdown 
+- [ ] Create Blog thats built from markdown
 - [ ] Add dark/light theme toggle
 - [ ] Responsive design for mobile/tablet
 - [ ] SEO optimization
@@ -31,4 +32,3 @@
 - [ ] Custom 404 page
 - [ ] Add favicon and meta tags
 - [ ] Deploy to production (e.g., Vercel, Netlify)
-

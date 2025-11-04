@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { Button } from '@/components/ui/button';
-import { useEffect, useState, useRef } from 'react';
+import * as React from "react";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState, useRef } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from '@/components/ui/navigation-menu';
+} from "@/components/ui/navigation-menu";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { cn } from '@/lib/utils';
-import { MenuIcon } from 'lucide-react';
-import { Link, useLocation } from '@tanstack/react-router';
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { MenuIcon } from "lucide-react";
+import { Link, useLocation } from "@tanstack/react-router";
 
 // Types
 export interface Navbar01NavLink {
@@ -30,16 +30,8 @@ export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
   logoHref?: string;
 }
 
-
 export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
-  (
-    {
-      className,
-      navigationLinks,
-      ...props
-    },
-    ref
-  ) => {
+  ({ className, navigationLinks, ...props }, ref) => {
     const [isMobile, setIsMobile] = useState(false);
     const location = useLocation();
     const containerRef = useRef<HTMLElement>(null);
@@ -65,21 +57,24 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     }, []);
 
     // Combine refs
-    const combinedRef = React.useCallback((node: HTMLElement | null) => {
-      containerRef.current = node;
-      if (typeof ref === 'function') {
-        ref(node);
-      } else if (ref) {
-        ref.current = node;
-      }
-    }, [ref]);
+    const combinedRef = React.useCallback(
+      (node: HTMLElement | null) => {
+        containerRef.current = node;
+        if (typeof ref === "function") {
+          ref(node);
+        } else if (ref) {
+          ref.current = node;
+        }
+      },
+      [ref],
+    );
 
     return (
       <header
         ref={combinedRef}
         className={cn(
-          'sticky top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6 [&_*]:no-underline',
-          className
+          "sticky top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6 [&_*]:no-underline",
+          className,
         )}
         {...props}
       >
@@ -110,7 +105,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                                 "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent cursor-pointer no-underline",
                                 location.pathname === link.href
                                   ? "bg-accent"
-                                  : "text-foreground/80"
+                                  : "text-foreground/80",
                               )}
                             >
                               {link.label}
@@ -137,7 +132,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                               "hover:text-accent-foreground group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent focus:bg-accent focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
                               location.pathname === link.href
                                 ? "bg-accent text-accent-foreground"
-                                : ""
+                                : "",
                             )}
                           >
                             {link.label}
@@ -165,8 +160,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
         </div>
       </header>
     );
-  }
+  },
 );
 
-Navbar01.displayName = 'Navbar01';
-
+Navbar01.displayName = "Navbar01";

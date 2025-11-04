@@ -146,10 +146,14 @@ p {
 /* Animations */
 @keyframes borderGlow {
   0% {
-    box-shadow: 0 0 0 8px #22d3ee, 0 0 24px 0 #22d3ee80;
+    box-shadow:
+      0 0 0 8px #22d3ee,
+      0 0 24px 0 #22d3ee80;
   }
   100% {
-    box-shadow: 0 0 0 12px #22d3ee, 0 0 40px 8px #22d3ee80;
+    box-shadow:
+      0 0 0 12px #22d3ee,
+      0 0 40px 8px #22d3ee80;
   }
 }
 

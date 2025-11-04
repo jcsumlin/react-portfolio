@@ -8,7 +8,7 @@ import { getSentryContext } from "./helpers";
 
 export default {
   async fetch(
-    request: Request<unknown, CfProperties<unknown>>
+    request: Request<unknown, CfProperties<unknown>>,
   ): Promise<Response> {
     if (request.method !== "POST") {
       return new Response(null, { status: 405 });
@@ -26,7 +26,7 @@ export default {
     } catch {
       captureException(
         new Error("Failed to parse JSON"),
-        getSentryContext(request)
+        getSentryContext(request),
       );
       return new Response(null, { status: 400 });
     }
@@ -35,7 +35,7 @@ export default {
       captureException(result.error, getSentryContext(request));
       return Response.json(
         { error: "Invalid form data", details: result.error },
-        { status: 400 }
+        { status: 400 },
       );
     }
     const data = result.data;
