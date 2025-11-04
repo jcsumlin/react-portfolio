@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --ignore-scripts
       - name: Run knip
-        run: pnpm run knip
+        run: pnpm knip --reporter github-actions
       - name: Run lint
         run: pnpm run lint
       - name: Run type-check
