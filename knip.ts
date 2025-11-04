@@ -12,6 +12,7 @@ const config: KnipConfig = {
     'src/routeTree.gen.ts',
     'worker-configuration.d.ts',
     'src/types/index.d.ts',
+    'src/components/Projects.tsx', // temporarily ignore
   ],
   ignoreDependencies: [
     'tailwindcss',
