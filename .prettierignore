@@ -7,3 +7,4 @@ dist
 package-lock.yaml
 pnpm-lock.yaml
 worker-configuration.d.ts
+**/*.gen.ts
