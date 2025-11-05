@@ -13,8 +13,11 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { formSchema } from '@/schemas/contactMe';
 import { Form } from '@/components/ui/form/useFormField';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+import useTheme from '@/hooks/useTheme';
 
 export default function ContactMe() {
+  const { theme } = useTheme();
   const methods = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -101,6 +104,13 @@ export default function ContactMe() {
                 <FormMessage />
               </FormItem>
             )}
+          />
+          <HCaptcha
+            sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
+            onVerify={(token: string) =>
+              methods.setValue('hCaptchaToken', token)
+            }
+            theme={theme === 'dark' ? 'dark' : 'light'}
           />
           <Button type="submit">Send Message</Button>
         </form>
