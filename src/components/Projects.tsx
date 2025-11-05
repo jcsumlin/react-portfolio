@@ -12,7 +12,7 @@ const projects: Project[] = projectsData.filter((project) => !project.featured);
 
 export default function Projects() {
   return (
-    <div className="mt-4 min-h-screen px-4 md:px-8 py-16" id="projects">
+    <section className="mt-4 min-h-screen py-16" id="projects">
       <SectionTitle title="Projects" />
       <p className="text-lg text-gray-300 mb-12 max-w-3xl">
         Here are a few projects I've worked on recently. Want to learn more?{' '}
@@ -161,6 +161,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

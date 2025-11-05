@@ -23,7 +23,7 @@ function getDisplayDate(start_date: string, end_date: string) {
 
 export default function Experience() {
   return (
-    <div className="mt-4 min-h-screen" id="experience">
+    <section className="mt-4 min-h-screen" id="experience">
       <SectionTitle title="Experience" />
       <Timeline>
         {experience.map((item) => (
@@ -43,6 +43,6 @@ export default function Experience() {
           </TimelineItem>
         ))}
       </Timeline>
-    </div>
+    </section>
   );
 }
