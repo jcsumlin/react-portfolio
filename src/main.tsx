@@ -4,6 +4,7 @@ import { routeTree } from './routeTree.gen';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { scan } from 'react-scan'; // must be imported before React and React DOM
 import ThemeProvider from './providers/ThemeProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Create a new router instance
 const router = createRouter({ routeTree });
@@ -15,6 +16,8 @@ declare module '@tanstack/react-router' {
   }
 }
 
+const queryClient = new QueryClient();
+
 scan({
   enabled: true,
 });
@@ -25,9 +28,11 @@ if (!rootElement.innerHTML) {
   const root = createRoot(rootElement);
   root.render(
     <StrictMode>
-      <ThemeProvider defaultTheme="light" storageKey="chat-portfolio-theme">
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider defaultTheme="light" storageKey="chat-portfolio-theme">
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </QueryClientProvider>
     </StrictMode>,
   );
 }

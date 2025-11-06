@@ -1,6 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
 
 import { ReactNode } from 'react';
+import { formSchema } from '@/schemas/contactMe';
 
 export type TimelineSize = 'sm' | 'md' | 'lg';
 export type TimelineStatus = 'completed' | 'in-progress' | 'pending';
@@ -43,5 +44,7 @@ export interface Project {
   liveUrl?: string;
   featured?: boolean;
 }
+
+export type ContactFormData = z.infer<typeof formSchema>;
 
 type Theme = 'dark' | 'light' | 'system';

@@ -15,9 +15,11 @@ import { formSchema } from '@/schemas/contactMe';
 import { Form } from '@/components/ui/form/useFormField';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import useTheme from '@/hooks/useTheme';
+import usePostContact from '@/hooks/usePostContact';
 
 export default function ContactMe() {
   const { theme } = useTheme();
+  const { mutateAsync } = usePostContact();
   const methods = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -29,7 +31,9 @@ export default function ContactMe() {
   });
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    mutateAsync(data).then(() => {
+      methods.reset();
+    });
   };
 
   return (
@@ -105,12 +109,21 @@ export default function ContactMe() {
               </FormItem>
             )}
           />
-          <HCaptcha
-            sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
-            onVerify={(token: string) =>
-              methods.setValue('hCaptchaToken', token)
-            }
-            theme={theme === 'dark' ? 'dark' : 'light'}
+          <FormField
+            name="hCaptchaToken"
+            control={methods.control}
+            render={({ field: { onChange } }) => (
+              <FormItem>
+                <FormControl>
+                  <HCaptcha
+                    sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
+                    onVerify={(token: string) => onChange(token)}
+                    theme={theme === 'dark' ? 'dark' : 'light'}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
           <Button type="submit">Send Message</Button>
         </form>

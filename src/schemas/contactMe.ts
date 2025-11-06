@@ -6,5 +6,5 @@ export const formSchema = z.object({
     .string()
     .min(10, { message: 'Message must be at least 10 characters' }),
   organization: z.string().optional(), // Honeypot field
-  hCaptchaToken: z.string(),
+  hCaptchaToken: z.string({ message: 'hCaptcha verification is required' }),
 });
