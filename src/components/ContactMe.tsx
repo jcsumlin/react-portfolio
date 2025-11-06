@@ -16,10 +16,12 @@ import { Form } from '@/components/ui/form/useFormField';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import useTheme from '@/hooks/useTheme';
 import usePostContact from '@/hooks/usePostContact';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui';
+import { AlertTriangle, Check } from 'lucide-react';
 
 export default function ContactMe() {
   const { theme } = useTheme();
-  const { mutateAsync } = usePostContact();
+  const { mutateAsync, data } = usePostContact();
   const methods = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,8 +35,9 @@ export default function ContactMe() {
   const { control } = methods;
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
-    mutateAsync(data).then(() => {
-      methods.reset();
+    const testData = { ...data };
+    mutateAsync(testData).then(() => {
+      // methods.reset();
     });
   };
 
@@ -70,6 +73,7 @@ export default function ContactMe() {
                     placeholder="Your Email"
                     {...field}
                     className="placeholder:text-white"
+                    type="email"
                   />
                 </FormControl>
                 <FormMessage />
@@ -121,6 +125,7 @@ export default function ContactMe() {
                     sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
                     onVerify={(token: string) => {
                       onChange(token);
+                      // ensure RHF onBlur is called to mark field as touched
                       onBlur();
                     }}
                     onChalExpired={() => onChange('')}
@@ -135,6 +140,22 @@ export default function ContactMe() {
           <Button type="submit">Send Message</Button>
         </form>
       </Form>
+      {data && (
+        <Alert
+          variant={data.success ? 'success' : 'destructive'}
+          className="mt-4"
+        >
+          {data.success ? (
+            <Check className="inline mr-2" />
+          ) : (
+            <AlertTriangle className="inline mr-2" />
+          )}
+          <AlertTitle>
+            {data.success ? 'Message sent!' : 'Error sending message'}
+          </AlertTitle>
+          <AlertDescription>{data.message}</AlertDescription>
+        </Alert>
+      )}
     </span>
   );
 }

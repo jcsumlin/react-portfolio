@@ -48,3 +48,9 @@ export interface Project {
 export type ContactFormData = z.infer<typeof formSchema>;
 
 type Theme = 'dark' | 'light' | 'system';
+
+interface ResponseData {
+  success: boolean;
+  message: string;
+  data: unknown;
+}

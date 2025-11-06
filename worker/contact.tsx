@@ -4,7 +4,9 @@ import {
   sendThankYouEmail,
   sendContactNotificationEmail,
 } from '../functions/send_email';
-import getSentryContext from './helpers';
+import getSentryContext from '../functions/get_sentry_context';
+import verifyHCaptcha from '../functions/verify_hcaptcha';
+import type { ResponseData } from '../src/types';
 
 export default {
   async fetch(
@@ -30,7 +32,6 @@ export default {
       );
       return new Response(null, { status: 400 });
     }
-
     if (!result.success) {
       captureException(result.error, getSentryContext(request));
       return Response.json(
@@ -39,14 +40,39 @@ export default {
       );
     }
     const data = result.data;
+    const successResponse: ResponseData = {
+      success: true,
+      message: 'Form submitted successfully',
+      data,
+    };
+    const failedResponse: ResponseData = {
+      success: false,
+      message: 'Failed to process form. Please try again later.',
+      data,
+    };
+    // randomly return success or failure for testing
+    if (Math.random() < 0.5) return Response.json(failedResponse);
+    return Response.json(successResponse);
+
     if (data.organization) {
       captureException(new Error('Bot detected'), getSentryContext(request));
-      return Response.json({ message: 'Bot detected' }, { status: 200 });
+
+      return Response.json(successResponse); // Silently succeed
+    }
+    if (
+      (await verifyHCaptcha(
+        request.headers.get('cf-connecting-ip') || 'unknown',
+        data.hCaptchaToken,
+      )) === false
+    ) {
+      captureException(new Error('hCaptcha failed'), getSentryContext(request));
+      failedResponse.message = 'hCaptcha verification failed';
+      return Response.json(failedResponse, { status: 403 });
     }
     try {
       await sendThankYouEmail(data);
       await sendContactNotificationEmail(data);
-      return Response.json(data);
+      return Response.json(successResponse);
     } catch (error) {
       captureException(error, getSentryContext(request));
       return Response.json({ error: 'Failed to send emails' }, { status: 500 });

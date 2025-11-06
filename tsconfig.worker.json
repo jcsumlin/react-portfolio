@@ -11,5 +11,10 @@
     ],
     "jsx": "react-jsx"
   },
-  "include": ["worker", "./worker-configuration.d.ts", "node"]
+  "include": [
+    "worker",
+    "./worker-configuration.d.ts",
+    "node",
+    "functions/get_sentry_context.ts"
+  ]
 }

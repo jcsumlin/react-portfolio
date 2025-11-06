@@ -10,3 +10,4 @@ export * from './tooltip';
 export * from './popover';
 export * from './timeline';
 export * from './timeline';
+export * from './alert';

@@ -7,7 +7,7 @@ export const Route = createRootRoute({
 });
 const navigationLinks = [
   { href: '/', label: 'Home' },
-  { href: '#projects', label: 'Projects' },
+  { href: '/#projects', label: 'Projects' },
   { href: '/blog', label: 'Blog' },
 ];
 
