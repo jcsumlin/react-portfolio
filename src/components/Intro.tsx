@@ -8,10 +8,8 @@ import Mastodon from '@/assets/mastodon.svg?react';
 import Github from '@/assets/github.svg?react';
 import LinkedIn from '@/assets/linkedin.svg?react';
 import { File } from 'lucide-react';
-import useTheme from '@/hooks/useTheme';
 
 export default function Intro() {
-  const { theme } = useTheme();
   return (
     <div>
       <span className="h-auto w-full flex flex-col md:flex-row items-center md:items-start md:space-x-12 text-center md:text-left">
