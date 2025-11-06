@@ -27,8 +27,10 @@ export default function ContactMe() {
       email: '',
       message: '',
       organization: '', // Honeypot field
+      hCaptchaToken: '',
     },
   });
+  const { control } = methods;
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     mutateAsync(data).then(() => {
@@ -76,7 +78,7 @@ export default function ContactMe() {
           />
           <FormField
             name={'message'}
-            control={methods.control}
+            control={control}
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Message</FormLabel>
@@ -93,7 +95,7 @@ export default function ContactMe() {
           />
           <FormField
             name="organization"
-            control={methods.control}
+            control={control}
             render={({ field }) => (
               <FormItem className="absolute left-[-9999px] size-px overflow-hidden">
                 <FormLabel>Organization</FormLabel>
@@ -111,13 +113,18 @@ export default function ContactMe() {
           />
           <FormField
             name="hCaptchaToken"
-            control={methods.control}
-            render={({ field: { onChange } }) => (
+            control={control}
+            render={({ field: { onChange, onBlur } }) => (
               <FormItem>
                 <FormControl>
                   <HCaptcha
                     sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
-                    onVerify={(token: string) => onChange(token)}
+                    onVerify={(token: string) => {
+                      onChange(token);
+                      onBlur();
+                    }}
+                    onChalExpired={() => onChange('')}
+                    onError={() => onChange('')}
                     theme={theme === 'dark' ? 'dark' : 'light'}
                   />
                 </FormControl>

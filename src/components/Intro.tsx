@@ -20,7 +20,6 @@ export default function Intro() {
           alt="Chat Sumlin"
           className="w-48 h-48 md:w-72 md:h-72 rounded-full mx-auto mb-8 mt-16 shadow-lg animate-[pulse_2s_ease-in-out_infinite] transition-transform duration-500 hover:scale-105"
           style={{
-            // boxShadow: '0 0 0 8px #22d3ee, 0 0 24px 0 #22d3ee80',
             animation: 'borderGlow 2s infinite alternate',
           }}
         />
@@ -31,9 +30,9 @@ export default function Intro() {
             </h1>
             <span className="inline">
               <span className="text-secondary-foreground">is building </span>
-              <span className="text-cyan-400">awesome things.</span>
+              <span className="text-primary">awesome things.</span>
               <span
-                className="ml-1 inline-block align-bottom text-cyan-400"
+                className="ml-1 inline-block align-bottom text-primary"
                 style={{
                   animation: 'blink 0.75s steps(1, end) infinite',
                 }}
@@ -57,7 +56,7 @@ export default function Intro() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="ghost">
-                  <Github fill={theme === 'dark' ? '#FFFFFF' : '#000000'} />
+                  <Github className="dark:fill-white fill-black" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>

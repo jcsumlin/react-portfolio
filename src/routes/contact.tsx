@@ -19,12 +19,12 @@ function RouteComponent() {
         <header>
           <h1
             id="contact-heading"
-            className="text-4xl font-extrabold text-white mb-2"
+            className="text-4xl font-extrabold mb-2"
             tabIndex={-1}
           >
             Contact Me
           </h1>
-          <p className="text-lg text-gray-300 mb-4">
+          <p className="text-lg mb-4">
             I'd love to hear from you! Whether you have a question, a project
             idea, or just want to say hello, feel free to reach out using the
             form below.

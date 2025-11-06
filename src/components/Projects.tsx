@@ -14,7 +14,7 @@ export default function Projects() {
   return (
     <section className="mt-4 min-h-screen py-16" id="projects">
       <SectionTitle title="Projects" />
-      <p className="text-lg text-gray-300 mb-12 max-w-3xl">
+      <p className="text-lg mb-12 max-w-3xl">
         Here are a few projects I've worked on recently. Want to learn more?{' '}
         <Link
           to="/contact"

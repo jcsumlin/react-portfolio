@@ -29,7 +29,7 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider defaultTheme="light" storageKey="chat-portfolio-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="chat-portfolio-theme">
           <RouterProvider router={router} />
         </ThemeProvider>
       </QueryClientProvider>

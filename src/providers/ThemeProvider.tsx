@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
+  storageKey: string;
   defaultTheme?: Theme;
-  storageKey?: string;
 };
 
 export default function ThemeProvider({
   children,
+  storageKey,
   defaultTheme = 'system',
-  storageKey = 'vite-ui-theme',
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(

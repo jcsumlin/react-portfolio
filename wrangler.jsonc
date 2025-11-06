@@ -24,5 +24,6 @@
   "vars": {
     "TO_EMAIL": "chat@chatsumlin.com",
     "FROM_EMAIL": "No Reply <send@chatsumlin.com>",
+    "VITE_HCAPTCHA_SITE_KEY": "0634de9a-f938-4d5c-83b0-2066bae4ef72",
   },
 }
