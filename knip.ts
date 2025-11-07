@@ -21,6 +21,7 @@ const config: KnipConfig = {
     '@react-email/preview-server',
     '@react-email/components',
     'tw-animate-css',
+    '@hookform/devtools',
   ],
 };
 
