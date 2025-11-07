@@ -22,11 +22,14 @@ export default function Intro() {
           }}
         />
         <div className="w-1/2 my-auto">
-          <span className="flex w-full text-4xl flex-wrap items-baseline">
-            <h1 className="font-bold inline m-0 p-0 text-center md:text-left w-full">
-              Chat Sumlin
-            </h1>
-            <span className="inline">
+          <span className="flex w-full  flex-wrap items-baseline">
+            <div className="text-4xl flex w-full items-end gap-2">
+              <h1 className="font-bold inline m-0 p-0 text-center md:text-left">
+                Chat Sumlin
+              </h1>
+              <p className="italic font-bold text-base">(he/him)</p>
+            </div>
+            <span className="inline text-4xl">
               <span className="text-secondary-foreground">is building </span>
               <span className="text-primary">awesome things.</span>
               <span
@@ -39,9 +42,8 @@ export default function Intro() {
               </span>
             </span>
           </span>
-          <h4 className="italic">he/him</h4>
-          <h2>Full-stack software engineer</h2>
-          <p>
+          <h2 className="text-2xl">Full-stack software engineer</h2>
+          <p className="text-lg my-4">
             Based in Atlanta, GA specializing in building (and occasionally
             designing) exceptional websites, applications, and everything in
             between.

@@ -78,7 +78,7 @@ p {
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(0.95 0.005 247.858);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(72.128% 0.10664 217.71);
+  --primary: oklab(54% -0.066 -0.05358);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.9 0.01 247.858);
   --secondary-foreground: oklch(0.129 0.042 264.695);
@@ -142,14 +142,12 @@ p {
 /* Animations */
 @keyframes borderGlow {
   0% {
-    box-shadow:
-      0 0 0 8px #22d3ee,
-      0 0 24px 0 #22d3ee80;
+    box-shadow: 0 0 0s 8px var(--primary) 0 0 24px 0 var(--primary);
   }
   100% {
     box-shadow:
-      0 0 0 12px #22d3ee,
-      0 0 40px 8px #22d3ee80;
+      0 0 0 12px var(--primary),
+      0 0 40px 8px var(--primary);
   }
 }
 

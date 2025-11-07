@@ -18,7 +18,7 @@ export default function Projects() {
         Here are a few projects I've worked on recently. Want to learn more?{' '}
         <Link
           to="/contact"
-          className="text-primary hover:text-primary/90 transition-colors"
+          className="text-primary underline hover:text-primary/90 transition-colors"
         >
           Contact me
         </Link>
