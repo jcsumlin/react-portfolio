@@ -4,9 +4,14 @@
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+html.dark {
+  background-color: var(--color-slate-950);
+}
+html {
+  background-color: var(--color-white);
+}
 
 #root {
-  color: aliceblue;
   height: 100%;
 }
 

@@ -21,17 +21,22 @@ function getDisplayDate(start_date: string, end_date: string) {
   return `${format(startDateObject, 'MMM yyyy')} - ${endDateObject ? format(endDateObject, 'MMM yyyy') : 'Present'}`;
 }
 
+// Pre-process experience data with memoized date formatting
+const processedExperience = experience.map((item) => ({
+  ...item,
+  displayDate: getDisplayDate(item.start_date, item.end_date),
+  key: kebabCase(item.title + '-' + item.company),
+}));
+
 export default function Experience() {
   return (
-    <section className="mt-4 min-h-screen" id="experience">
+    <section className="my-4" id="experience">
       <SectionTitle title="Experience" />
       <Timeline>
-        {experience.map((item) => (
-          <TimelineItem key={kebabCase(item.title + '-' + item.company)}>
+        {processedExperience.map((item) => (
+          <TimelineItem key={item.key}>
             <TimelineHeader>
-              <TimelineTime>
-                {getDisplayDate(item.start_date, item.end_date)}
-              </TimelineTime>
+              <TimelineTime>{item.displayDate}</TimelineTime>
               <div>
                 <TimelineTitle>{item.company}</TimelineTitle>
                 <TimelineSubHeader>{item.title}</TimelineSubHeader>

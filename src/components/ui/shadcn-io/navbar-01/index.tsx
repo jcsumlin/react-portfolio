@@ -31,21 +31,44 @@ interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
   logoHref?: string;
 }
 
-export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
+export const Navbar = React.forwardRef<HTMLElement, Navbar01Props>(
   ({ className, navigationLinks, ...props }, ref) => {
     const [isMobile, setIsMobile] = useState(false);
     const location = useLocation();
     const containerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
+      let timeoutId: number;
+
       const checkWidth = () => {
-        if (containerRef.current) {
-          const width = containerRef.current.offsetWidth;
-          setIsMobile(width < 768); // 768px is md breakpoint
-        }
+        // Debounce the check to avoid excessive calls
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          if (containerRef.current) {
+            const width = containerRef.current.offsetWidth;
+            const shouldBeMobile = width < 768; // 768px is md breakpoint
+            // Only update state if it actually changed
+            setIsMobile((prevIsMobile) => {
+              if (prevIsMobile !== shouldBeMobile) {
+                return shouldBeMobile;
+              }
+              return prevIsMobile;
+            });
+          }
+        }, 16); // ~60fps throttling
       };
 
-      checkWidth();
+      // Use requestAnimationFrame for initial check to avoid blocking the main thread
+      const initialCheck = () => {
+        requestAnimationFrame(() => {
+          if (containerRef.current) {
+            const width = containerRef.current.offsetWidth;
+            setIsMobile(width < 768);
+          }
+        });
+      };
+
+      initialCheck();
 
       const resizeObserver = new ResizeObserver(checkWidth);
       if (containerRef.current) {
@@ -53,6 +76,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       }
 
       return () => {
+        clearTimeout(timeoutId);
         resizeObserver.disconnect();
       };
     }, []);
@@ -91,7 +115,10 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                     variant="ghost"
                     size="icon"
                   >
-                    <MenuIcon className="h-5 w-5" />
+                    <MenuIcon
+                      className="h-5 w-5"
+                      aria-label="Open navigation menu"
+                    />
                     <span className="sr-only">Open menu</span>
                   </Button>
                 </PopoverTrigger>
@@ -124,7 +151,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
               {/* Navigation menu */}
               {!isMobile && (
                 <NavigationMenu className="flex">
-                  <NavigationMenuList className="gap-1">
+                  <NavigationMenuList className="gap-1 min-w-full">
                     {navigationLinks.map((link, index) => (
                       <Link to={link.href} key={index}>
                         <NavigationMenuItem key={index}>
@@ -165,4 +192,4 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
   },
 );
 
-Navbar01.displayName = 'Navbar01';
+Navbar.displayName = 'Navbar01';

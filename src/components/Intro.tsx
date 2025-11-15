@@ -15,14 +15,14 @@ export default function Intro() {
       <span className="h-auto w-full flex flex-col md:flex-row items-center md:items-start md:space-x-12 text-center md:text-left">
         <img
           src="https://media.licdn.com/dms/image/v2/C4E03AQGvAOGTOQHuyg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1634785757978?e=1762992000&v=beta&t=kY-_sUvHid69Q78yaru8rG0LksTAiPRxNd_cElcI_xQ"
-          alt="Chat Sumlin"
+          alt="Portrait picture of Chat Sumlin"
           className="w-48 h-48 md:w-72 md:h-72 rounded-full mx-auto mb-8 mt-16 shadow-lg animate-[pulse_2s_ease-in-out_infinite] transition-transform duration-500 hover:scale-105"
           style={{
             animation: 'borderGlow 2s infinite alternate',
           }}
         />
-        <div className="w-1/2 my-auto">
-          <span className="flex w-full  flex-wrap items-baseline">
+        <div className="md:w-1/2 my-auto">
+          <span className="flex w-full flex-wrap items-baseline">
             <div className="text-4xl flex w-full items-end gap-2">
               <h1 className="font-bold inline m-0 p-0 text-center md:text-left">
                 Chat Sumlin
@@ -55,7 +55,7 @@ export default function Intro() {
           >
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost">
+                <Button variant="ghost" className="hover:bg-primary">
                   <Github className="dark:fill-white fill-black" />
                 </Button>
               </TooltipTrigger>
@@ -71,7 +71,7 @@ export default function Intro() {
           >
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost">
+                <Button variant="ghost" className="hover:bg-primary">
                   <Mastodon />
                 </Button>
               </TooltipTrigger>
@@ -88,8 +88,11 @@ export default function Intro() {
           >
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost">
-                  <LinkedIn />
+                <Button
+                  variant="ghost"
+                  className="fill-[#0A66C2] hover:fill-white hover:bg-primary"
+                >
+                  <LinkedIn className="fill-inherit" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -104,8 +107,11 @@ export default function Intro() {
           >
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost">
-                  <File />
+                <Button
+                  variant="ghost"
+                  className="hover:fill-white hover:bg-primary"
+                >
+                  <File className="fill-inherit" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
