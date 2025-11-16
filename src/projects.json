@@ -1,29 +1,30 @@
 [
   {
     "id": 1,
-    "title": "E-commerce Platform",
-    "description": "A full-stack e-commerce platform with React, Node.js, and MongoDB. Features include user authentication, product filtering, cart functionality, and payment processing.",
+    "title": "Soft 75",
+    "description": "A React Native application for tracking progress in the Soft 75 fitness challenge.",
     "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    "imageUrl": "https://placehold.co/600x400?text=E-commerce+Project",
-    "githubUrl": "https://github.com/yourusername/ecommerce",
-    "liveUrl": "https://your-ecommerce-site.com",
-    "featured": true
+    "imageUrl": "https://play-lh.googleusercontent.com/6qIKZG8vjo2ygmvHYYLutQr633U3dMNRcrQ-JjsQszEqdw0cs8GcDeN66tI1TSXvT14=w2560-h1440",
+    "githubUrl": "https://github.com/jcsumlin/soft-75",
+    "liveUrl": "https://play.google.com/apps/testing/com.oyyhhwrm.soft75",
+    "featured": false
   },
   {
     "id": 2,
-    "title": "Task Management App",
-    "description": "A productivity app for managing tasks and projects with drag-and-drop functionality.",
-    "technologies": ["React", "Redux", "Firebase"],
-    "imageUrl": "https://placehold.co/600x400?text=Task+App",
-    "githubUrl": "https://github.com/yourusername/task-app"
+    "title": "Peribot",
+    "description": "This is a jack of all trades Discord bot that I maintain with a focus on enhancing any community it is invited to. Inspired by the Steven Universe character 'Peridot', Peribot is comprised of over 30 cogs and with more on the way! This bot can be deployed by anyone who wants to customize its appearance or functionality to fit better with a community.",
+    "technologies": ["Python", "Docker", "Discord"],
+    "imageUrl": "https://github.com/jcsumlin/Peribot/blob/master/3f8c22095f5a47200dfe99b96ce5dab1_preview.jpeg?raw=true",
+    "githubUrl": "https://github.com/jcsumlin/Peribot",
+    "featured": true
   },
   {
     "id": 3,
-    "title": "Weather Dashboard",
-    "description": "A weather application that displays current and forecasted weather using a third-party API.",
-    "technologies": ["JavaScript", "API Integration", "CSS"],
-    "imageUrl": "https://placehold.co/600x400?text=Weather+App",
-    "githubUrl": "https://github.com/yourusername/weather-app"
+    "title": "Discord Ban Appeal System",
+    "description": " This is a ReactJS application that I made for any Discord server that wants to allow its users to appeal bans. It uses Oauth2 to prevent spam and Discord webhooks to alert moderators of new appeals. Moderators can approve those appeals directly from the webhook message if they want too!",
+    "technologies": ["JavaScript", "React", "CSS"],
+    "imageUrl": "https://github.com/jcsumlin/discord-ban-appeal/raw/master/img_1.png",
+    "githubUrl": "https://github.com/jcsumlin/discord-ban-appeal"
   },
   {
     "id": 4,

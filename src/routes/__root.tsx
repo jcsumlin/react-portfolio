@@ -18,7 +18,9 @@ function RootComponent() {
         className="bg-transparent! text-gray-300 border-0 accent-green-400"
         navigationLinks={navigationLinks}
       />
-      <Outlet />
+      <div className="w-full md:w-3/4 md:mx-auto px-8">
+        <Outlet />
+      </div>
       <TanStackRouterDevtools />
     </div>
   );

@@ -1,7 +1,7 @@
-import Experience from '@/components/Experience';
-import Intro from '@/components/Intro';
-import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
+import Experience from '@/components/IndexPage/Experience';
+import Intro from '@/components/IndexPage/Intro';
+import Projects from '@/components/IndexPage/Projects';
+import Skills from '@/components/IndexPage/Skills';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
@@ -10,7 +10,7 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   return (
-    <div className="w-full md:w-3/4 md:mx-auto px-8">
+    <div>
       <Intro />
       <Experience />
       <Skills />
