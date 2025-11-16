@@ -1,4 +1,6 @@
+import callback from './callback';
 import contact from './contact';
+import user from './user';
 import * as Sentry from '@sentry/cloudflare';
 
 export default Sentry.withSentry(
@@ -17,6 +19,14 @@ export default Sentry.withSentry(
       }
       if (url.pathname.startsWith('/api/contact')) {
         return await contact.fetch(request);
+      }
+
+      if (url.pathname.startsWith('/api/callback')) {
+        return await callback.fetch(request);
+      }
+
+      if (url.pathname.startsWith('/api/user')) {
+        return await user.fetch(request);
       }
 
       return new Response(null, { status: 404 });

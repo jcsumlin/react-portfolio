@@ -50,9 +50,6 @@ export default {
       message: 'Failed to process form. Please try again later.',
       data,
     };
-    // randomly return success or failure for testing
-    if (Math.random() < 0.5) return Response.json(failedResponse);
-    return Response.json(successResponse);
 
     if (data.organization) {
       captureException(new Error('Bot detected'), getSentryContext(request));
