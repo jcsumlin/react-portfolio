@@ -1,5 +1,5 @@
 import type { Project } from '@/types';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../SectionTitle';
 import projectsData from '@/projects.json';
 import { Link } from '@tanstack/react-router';
 

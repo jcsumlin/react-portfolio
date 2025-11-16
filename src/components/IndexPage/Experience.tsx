@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/timeline';
 import experience from '@/experience.json';
 import { format, parse } from 'date-fns';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../SectionTitle';
 import { kebabCase } from 'lodash';
 
 function getDisplayDate(start_date: string, end_date: string) {

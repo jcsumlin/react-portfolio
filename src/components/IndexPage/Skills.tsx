@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../SectionTitle';
 import SkillCard from './SkillCard';
 import { cn } from '@/lib/utils';
 
