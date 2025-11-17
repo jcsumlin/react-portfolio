@@ -1,5 +1,6 @@
 import callback from './callback';
 import contact from './contact';
+import subscribe from './subscribe';
 import user from './user';
 import * as Sentry from '@sentry/cloudflare';
 
@@ -27,6 +28,9 @@ export default Sentry.withSentry(
 
       if (url.pathname.startsWith('/api/user')) {
         return await user.fetch(request);
+      }
+      if (url.pathname.startsWith('/api/subscribe')) {
+        return await subscribe.fetch(request);
       }
 
       return new Response(null, { status: 404 });

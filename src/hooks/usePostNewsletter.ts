@@ -1,8 +1,9 @@
+import type { SubscribeFormData, SubscribeResponse } from '@/schemas/subscribe';
 import { useMutation } from '@tanstack/react-query';
 
 const postNewsletter = async (
-  payload: NewsletterPayload,
-): Promise<NewsletterResponse> => {
+  payload: SubscribeFormData,
+): Promise<SubscribeResponse> => {
   const res = await fetch('/api/subscribe', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -18,6 +19,6 @@ const postNewsletter = async (
 export function usePostNewsletter() {
   return useMutation({
     mutationKey: ['newsletter', 'subscribe'],
-    mutationFn: ({ email }) => postNewsletter({ email }),
+    mutationFn: (email: string) => postNewsletter({ email }),
   });
 }

@@ -36,6 +36,7 @@
     "@tanstack/react-router": "^1.132.47",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cookie": "^1.0.2",
     "date-fns": "^4.1.0",
     "eslint-plugin-router\n": "link:@tanstack/eslint-plugin-router\n",
     "lodash": "^4.17.21",

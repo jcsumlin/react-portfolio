@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import ThankYouEmail from '../emails/thankyou';
-import { formSchema } from '../src/schemas/contactMe';
 import ContactFormSubmission from '../emails/contactFormSubmission';
+import type { ZodObject } from 'zod';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM_EMAIL = process.env.FROM_EMAIL;
@@ -43,9 +43,4 @@ export async function sendContactNotificationEmail(data: {
       />
     ),
   });
-}
-
-export function validatePayload(data: unknown) {
-  const parsedData = formSchema.safeParse(data);
-  return parsedData;
 }

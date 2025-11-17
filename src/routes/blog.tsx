@@ -7,6 +7,7 @@ import {
   FormMessage,
   Button,
 } from '@/components/ui';
+import { usePostNewsletter } from '@/hooks/usePostNewsletter';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createFileRoute } from '@tanstack/react-router';
 import { FormProvider, useForm, type SubmitHandler } from 'react-hook-form';
@@ -23,6 +24,7 @@ const signupInputs = z.object({
 type FormInputs = z.infer<typeof signupInputs>;
 
 function RouteComponent() {
+  const { mutateAsync, status } = usePostNewsletter();
   const methods = useForm({
     defaultValues: {
       email: '',
@@ -30,8 +32,11 @@ function RouteComponent() {
     resolver: zodResolver(signupInputs),
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {};
+  const onSubmit: SubmitHandler<FormInputs> = (data) => {
+    mutateAsync(data.email).then(() => {
+      methods.reset();
+    });
+  };
 
   return (
     <div>
@@ -61,7 +66,11 @@ function RouteComponent() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="place-self-end">
+          <Button
+            type="submit"
+            className="place-self-end cursor-pointer"
+            disabled={status === 'pending'}
+          >
             Submit
           </Button>
         </form>

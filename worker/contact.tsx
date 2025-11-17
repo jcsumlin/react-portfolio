@@ -1,12 +1,12 @@
 import { captureException } from '@sentry/cloudflare';
 import {
-  validatePayload,
   sendThankYouEmail,
   sendContactNotificationEmail,
 } from '../functions/send_email';
 import getSentryContext from '../functions/get_sentry_context';
 import verifyHCaptcha from '../functions/verify_hcaptcha';
 import type { ResponseData } from '../src/types';
+import { formSchema } from '../src/schemas/contactMe';
 
 export default {
   async fetch(
@@ -24,7 +24,7 @@ export default {
     let result;
     try {
       const json = await request.json();
-      result = validatePayload(json);
+      result = formSchema.safeParse(json);
     } catch {
       captureException(
         new Error('Failed to parse JSON'),

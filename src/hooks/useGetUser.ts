@@ -12,7 +12,7 @@ export default function useGetUser() {
         },
       });
       if (!response.ok) {
-        throw new Error('Failed to fetch user data');
+        return console.error('Failed to fetch user data:', response.statusText);
       }
       return response.json();
     },
