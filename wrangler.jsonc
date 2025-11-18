@@ -9,6 +9,7 @@
     "binding": "CF_VERSION_METADATA",
   },
   "assets": {
+    "directory": "./dist",
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*"],
   },
@@ -26,4 +27,13 @@
     "FROM_EMAIL": "No Reply <send@chatsumlin.com>",
     "VITE_HCAPTCHA_SITE_KEY": "0634de9a-f938-4d5c-83b0-2066bae4ef72",
   },
+  "d1_databases": [
+    {
+      "binding": "portfolio_blog_prod",
+      "database_name": "portfolio-blog-prod",
+      "database_id": "23c74f22-791f-4944-9df9-7d4019ee2447",
+      "remote": true,
+      "migrations_dir": "drizzle",
+    },
+  ],
 }

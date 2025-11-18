@@ -1,10 +1,14 @@
 import { getGitHubUserData } from '../functions/github_oauth';
 import { parse } from 'cookie';
+import { drizzle } from 'drizzle-orm/d1';
 
 export default {
   async fetch(
     request: Request<unknown, CfProperties<unknown>>,
+    env: Env,
   ): Promise<Response> {
+    const db = drizzle(env.portfolio_blog_prod);
+
     if (request.method !== 'GET') {
       return new Response(null, { status: 405 });
     }
@@ -16,6 +20,10 @@ export default {
       return new Response(null, { status: 401 });
     }
     const response = await getGitHubUserData(cookies['access_token']);
+    try {
+    } catch (error) {
+      return new Response(null, { status: 500 });
+    }
     const data = {
       readOnly: true,
       avatarUrl: response.avatar_url,
