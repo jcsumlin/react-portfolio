@@ -10,6 +10,7 @@ import {
 import { usePostNewsletter } from '@/hooks/usePostNewsletter';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createFileRoute } from '@tanstack/react-router';
+import { Loader2 } from 'lucide-react';
 import { FormProvider, useForm, type SubmitHandler } from 'react-hook-form';
 import z from 'zod';
 
@@ -40,13 +41,14 @@ function RouteComponent() {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center">Coming Soon!</h1>
-      <h2 className="text-lg text-center">
-        Enter your email to receive updates
-      </h2>
+      <div className="text-center space-y-2 mb-8">
+        <h1 className="text-4xl font-bold">Coming Soon!</h1>
+        <h2 className="text-lg">Enter your email to receive updates</h2>
+        <p className="italic">I promise not to spam you</p>
+      </div>
       <FormProvider {...methods}>
         <form
-          className="flex place-content-center"
+          className="flex-col place-content-center"
           onSubmit={methods.handleSubmit(onSubmit)}
         >
           <FormField
@@ -59,7 +61,7 @@ function RouteComponent() {
                   <Input
                     placeholder="Email"
                     {...field}
-                    className="placeholder:text-white"
+                    className="dark:placeholder:text-white"
                   />
                 </FormControl>
                 <FormMessage />
@@ -68,10 +70,14 @@ function RouteComponent() {
           />
           <Button
             type="submit"
-            className="place-self-end cursor-pointer"
+            className="place-self-end cursor-pointer w-full mt-4"
             disabled={status === 'pending'}
           >
-            Submit
+            {status === 'pending' ? (
+              <Loader2 className="animate-spin" />
+            ) : (
+              'Submit'
+            )}
           </Button>
         </form>
       </FormProvider>

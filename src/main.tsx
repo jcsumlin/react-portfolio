@@ -1,8 +1,8 @@
+import { scan } from 'react-scan'; // must be imported before React and React DOM
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { routeTree } from './routeTree.gen';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
-import { scan } from 'react-scan'; // must be imported before React and React DOM
 import ThemeProvider from './providers/ThemeProvider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 

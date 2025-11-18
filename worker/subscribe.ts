@@ -40,8 +40,6 @@ export default {
       );
     }
     const email = result.data.email;
-
-    // Here you would add logic to store the email in your database or mailing list
     console.log(`New subscription from email: ${email}`);
     const { error } = await resend.contacts.create({
       email,

@@ -1,14 +1,14 @@
 import { Navbar } from '@/components/ui/shadcn-io/navbar-01';
 import { Outlet, createRootRoute } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 export const Route = createRootRoute({
   component: RootComponent,
 });
 const navigationLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#projects', label: 'Projects' },
+  // { href: '/#projects', label: 'Projects' },
   { href: '/blog', label: 'Blog' },
+  { href: '/login', label: 'Login' },
 ];
 
 function RootComponent() {
@@ -21,7 +21,6 @@ function RootComponent() {
       <div className="w-full md:w-3/4 md:mx-auto px-8">
         <Outlet />
       </div>
-      <TanStackRouterDevtools />
     </div>
   );
 }
