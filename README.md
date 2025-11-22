@@ -23,6 +23,8 @@
   - [x] Add Header meta tags
   - [x] Add favicon and meta tags
   - [ ]
+- [x] Setup Cloudflare D1 with Drizzle
+  - [ ] https://medium.com/full-stack-engineer/how-do-you-connect-drizzle-orm-to-a-cloudflare-d1-database-in-a-worker-1eff33177f73
 - [ ] Accessibility improvements (a11y)
 - [ ] Add About Me section
 - [ ] Projects showcase with filtering
