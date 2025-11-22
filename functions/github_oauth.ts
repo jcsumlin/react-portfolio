@@ -1,4 +1,4 @@
-import { GitHubUserSchema, type GitHubUser } from '../src/schemas/githubUser';
+import { type GitHubUser } from '../src/schemas/githubUser';
 
 const clientId = process.env.VITE_GITHUB_CLIENT_ID;
 const clientSecret = process.env.GITHUB_CLIENT_SECRET;
@@ -52,6 +52,6 @@ export function getGitHubUserData(accessToken: string): Promise<GitHubUser> {
     if (!response.ok) {
       throw new Error('Failed to fetch user data from GitHub');
     }
-    return GitHubUserSchema.parseAsync(response.json());
+    return response.json() as Promise<GitHubUser>;
   });
 }

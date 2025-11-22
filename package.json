@@ -14,7 +14,7 @@
     "email": "email dev",
     "generate-types": "wrangler types",
     "type-check": "pnpm generate-types && tsc",
-    "deploy": "pnpm run build && wrangler deploy",
+    "deploy": "pnpm run type-check && pnpm run build && wrangler deploy",
     "sourcemaps": "npx @sentry/wizard@latest -i sourcemaps --saas --org chat-sumlin --project portfolio-cloud-worker",
     "prepare": "husky"
   },

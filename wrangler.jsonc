@@ -26,6 +26,8 @@
     "TO_EMAIL": "chat@chatsumlin.com",
     "FROM_EMAIL": "No Reply <send@chatsumlin.com>",
     "VITE_HCAPTCHA_SITE_KEY": "0634de9a-f938-4d5c-83b0-2066bae4ef72",
+    "VITE_GITHUB_OAUTH_REDIRECT_URI": "https://cloudflare-chat-portfolio.chat9475.workers.dev/api/callback",
+    "VITE_GITHUB_CLIENT_ID": "Ov23liHmgQB4vRKSr2xR",
   },
   "d1_databases": [
     {
