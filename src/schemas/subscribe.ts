@@ -4,11 +4,9 @@ const subscribeSchema = z.object({
   email: z.email({ message: 'Please enter a valid email' }),
 });
 
-const subscribeResponseObject = z.object({
-  success: z.boolean(),
-  message: z.string(),
-});
-
-export type SubscribeResponse = z.infer<typeof subscribeResponseObject>;
+export type SubscribeResponse = {
+  success: boolean;
+  message: string;
+};
 export type SubscribeFormData = z.infer<typeof subscribeSchema>;
-export { subscribeSchema, subscribeResponseObject };
+export { subscribeSchema };

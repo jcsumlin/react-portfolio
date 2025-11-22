@@ -14,6 +14,7 @@ const config: KnipConfig = {
     'src/types/index.d.ts',
     'src/components/Projects.tsx', // temporarily ignore
     'src/routeTree.gen.ts', // generated file
+    'src/components/IndexPage/Projects.tsx', // TODO: temporary ignore
   ],
   ignoreDependencies: [
     'tailwindcss',
@@ -22,6 +23,7 @@ const config: KnipConfig = {
     '@react-email/components',
     'tw-animate-css',
     '@hookform/devtools',
+    '@tanstack/react-router-devtools',
   ],
 };
 
