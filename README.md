@@ -8,27 +8,30 @@
 - [x] TanStack Router
 - [ ] Configure CI/CD for:
   - [ ] Builds
-  - [ ] Dependency monitoring
-  - [ ] Contact me email form
+  - [x] Dependency monitoring - Dependabot
+  - [x] Contact me email form
   - [ ] Automated tests (unit/integration)
-  - [ ] Linting and formatting checks
+  - [x] Linting and formatting checks
   - [ ] Preview deployments for pull requests
-  - [ ] Enable Captcha for bot protection
+  - [x] Enable Captcha for bot protection
   - [ ] Multi deployment scripts
 - [ ] Create Blog thats built from markdown
-- [ ] Add dark/light theme toggle
-- [ ] Responsive design for mobile/tablet
+  - [ ] TODO: Added a subscribe input for now
+- [x] Add dark/light theme toggle
+- [x] Responsive design for mobile/tablet
 - [ ] SEO optimization
+  - [x] Add Header meta tags
+  - [ ]
 - [ ] Accessibility improvements (a11y)
 - [ ] Add About Me section
 - [ ] Projects showcase with filtering
-- [ ] Skills & technologies section
+- [x] Skills & technologies section
 - [ ] Downloadable resume/CV
-- [ ] Social media links integration
+- [x] Social media links integration
 - [ ] Animated transitions between pages
 - [ ] Add testimonials or references
-- [ ] Analytics integration (e.g., Google Analytics)
+- [x] Analytics integration (e.g., Google Analytics) - Cloudflare
 - [ ] Performance optimization (Lighthouse)
 - [ ] Custom 404 page
-- [ ] Add favicon and meta tags
+- [x] Add favicon and meta tags
 - [ ] Deploy to production (e.g., Vercel, Netlify)
