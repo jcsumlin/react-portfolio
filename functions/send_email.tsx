@@ -1,7 +1,6 @@
 import { Resend } from 'resend';
 import ThankYouEmail from '../emails/thankyou';
 import ContactFormSubmission from '../emails/contactFormSubmission';
-import type { ZodObject } from 'zod';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM_EMAIL = process.env.FROM_EMAIL;

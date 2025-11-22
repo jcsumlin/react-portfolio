@@ -71,19 +71,4 @@ const PublicUserSchema = BaseUserSchema.extend({
 
 // Union schema to handle both Private and Public users
 export const GitHubUserSchema = z.union([PrivateUserSchema, PublicUserSchema]);
-
-// Type inference
 export type GitHubUser = z.infer<typeof GitHubUserSchema>;
-export type PrivateUser = z.infer<typeof PrivateUserSchema>;
-export type PublicUser = z.infer<typeof PublicUserSchema>;
-export type Plan = z.infer<typeof PlanSchema>;
-
-// Helper function to validate and parse GitHub user data
-export const parseGitHubUser = (data: unknown): GitHubUser => {
-  return GitHubUserSchema.parse(data);
-};
-
-// Safe parsing function that returns result with success/error info
-export const safeParseGitHubUser = (data: unknown) => {
-  return GitHubUserSchema.safeParse(data);
-};

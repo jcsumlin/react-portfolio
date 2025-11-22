@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "name": "cloudflare-chat-portfolio",
+      "type": "node",
+      "request": "attach",
+      "websocketAddress": "ws://localhost:9229/cloudflare-chat-portfolio",
+      "resolveSourceMapLocations": null,
+      "attachExistingChildren": false,
+      "autoAttachChildProcesses": false,
+      "sourceMaps": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug Workers",
+      "configurations": ["cloudflare-chat-portfolio"],
+      "stopAll": true
+    }
+  ]
+}
