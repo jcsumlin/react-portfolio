@@ -1,5 +1,3 @@
-import { captureException } from '@sentry/cloudflare';
-import getSentryContext from '../functions/get_sentry_context';
 import { subscribeSchema } from '../src/schemas/subscribe';
 import { Resend } from 'resend';
 
@@ -9,35 +7,10 @@ export default {
   async fetch(
     request: Request<unknown, CfProperties<unknown>>,
   ): Promise<Response> {
-    // Initial request validations
-    if (request.method !== 'POST') {
-      return new Response(null, { status: 405 });
-    }
-
-    if (!request.headers.get('content-type')?.includes('application/json')) {
-      return new Response(null, { status: 415 });
-    }
-    if (!request.body) {
-      return new Response(null, { status: 400 });
-    }
-
-    let result;
-    try {
-      const json = await request.json();
-      result = subscribeSchema.safeParse(json);
-    } catch {
-      captureException(
-        new Error('Failed to parse JSON'),
-        getSentryContext(request),
-      );
-      return new Response(null, { status: 400 });
-    }
+    const json = await request.json();
+    const result = subscribeSchema.safeParse(json);
     if (!result.success) {
-      captureException(result.error, getSentryContext(request));
-      return Response.json(
-        { error: 'Invalid form data', details: result.error },
-        { status: 400 },
-      );
+      throw new Error('Invalid subscription data');
     }
     const email = result.data.email;
     console.log(`New subscription from email: ${email}`);
@@ -48,17 +21,7 @@ export default {
     });
 
     if (error) {
-      captureException(
-        new Error(`Failed to add subscriber: ${error.message}`),
-        getSentryContext(request),
-      );
-      return Response.json(
-        {
-          success: false,
-          message: 'Failed to subscribe. Please try again later.',
-        },
-        { status: 500 },
-      );
+      throw new Error('Failed to subscribe');
     }
     console.log(`Successfully added ${email} to the mailing list.`);
     return Response.json(
