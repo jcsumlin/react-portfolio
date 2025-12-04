@@ -1,0 +1,34 @@
+[
+  {
+    "company": "Alteryx",
+    "title": "Sr. Professional, Software Engineer",
+    "start_date": "05-01-2022",
+    "end_date": "Present",
+    "description": "Full Stack Engineer working on a portfolio of go to market tools and applications using React, Django, and AWS services. Leading initiatives to enhance user experience and streamline business processes, resulting in increased efficiency and customer satisfaction.",
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQES_WcuHXgAyA/company-logo_200_200/company-logo_200_200/0/1730465982072/alteryx_logo?e=1762992000&v=beta&t=tFjux-pwUoBr0E1P3PSPbBwNQzTE2VRRe0O9NqNHpTE"
+  },
+  {
+    "company": "Payroc",
+    "title": "Software Engineer II",
+    "start_date": "01-01-2022",
+    "end_date": "04-01-2022",
+    "description": "Full Stack Engineer working on modernizing legacy payment processing applications and building new features using React, Node.js, and AWS services. Collaborated with cross-functional teams to deliver scalable solutions that improved transaction processing speed and reliability.",
+    "logo": "https://media.licdn.com/dms/image/v2/D560BAQGfue8wt4oc2A/company-logo_100_100/company-logo_100_100/0/1681326801024/payroc_logo?e=1762992000&v=beta&t=XGpNgaQpObS3uADsOA7ue5jbzXN_okKwCITVm6E5hvQ"
+  },
+  {
+    "company": "Banyan Hills Technologies",
+    "title": "Software Engineer I",
+    "start_date": "06-01-2019",
+    "end_date": "08-01-2020",
+    "description": "Full Stack Engineer responsible for planning, designing, executing, and deploying new features for client AngularJS & PHP SaaS software. Worked with Senior Architects to modernize infrastructure and enhance application security. Daily tools: Git, AWS, AngularJS, PHP, Docker, MySQL, Jenkins.",
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQE7nnr5KBRgwQ/company-logo_100_100/company-logo_100_100/0/1719256540354/canopy_rmm_logo?e=1762992000&v=beta&t=jEoYwoohydQiKh4EytnKbSce2JD4mpU2E0C2swVfWvQ"
+  },
+  {
+    "company": "Payscape",
+    "title": "Software Engineer I",
+    "start_date": "08-01-2018",
+    "end_date": "05-01-2019",
+    "description": "Focused on AngularJS application development while contributing to backend PHP APIs. Worked with Docker, MySQL, Python, AWS, and 3rd-party APIs for new features and bug fixes.",
+    "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQE9HTdGJ2zTTg/company-logo_100_100/company-logo_100_100/0/1631351192008?e=1762992000&v=beta&t=_X0420Ccx2LI4TBXYJi-zKkUCIPUWQv2GobGBsNEp3I"
+  }
+]

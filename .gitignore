@@ -24,3 +24,9 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+dist/
+.wrangler
+.dev.vars*
+# Sentry Config File
+.env.sentry-build-plugin
+.env

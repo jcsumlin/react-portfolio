@@ -1,0 +1,56 @@
+/// <reference types="vite-plugin-svgr/client" />
+
+import { ReactNode } from 'react';
+import { formSchema } from '@/schemas/contactMe';
+
+export type TimelineSize = 'sm' | 'md' | 'lg';
+export type TimelineStatus = 'completed' | 'in-progress' | 'pending';
+export type TimelineColor =
+  | 'primary'
+  | 'secondary'
+  | 'muted'
+  | 'accent'
+  | 'destructive';
+
+export interface TimelineElement {
+  id: number;
+  date: string;
+  title: string;
+  description: string;
+  icon?: ReactNode | (() => ReactNode);
+  status?: TimelineStatus;
+  color?: TimelineColor;
+  size?: TimelineSize;
+  loading?: boolean;
+  error?: string;
+}
+
+export interface TimelineProps {
+  items: TimelineElement[];
+  size?: TimelineSize;
+  animate?: boolean;
+  iconColor?: TimelineColor;
+  connectorColor?: TimelineColor;
+  className?: string;
+}
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  imageUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
+  featured?: boolean;
+}
+
+export type ContactFormData = z.infer<typeof formSchema>;
+
+type Theme = 'dark' | 'light' | 'system';
+
+interface ResponseData {
+  success: boolean;
+  message: string;
+  data: unknown;
+}
