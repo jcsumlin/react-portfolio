@@ -3,11 +3,10 @@
     "id": 1,
     "title": "Soft 75",
     "description": "A React Native application for tracking progress in the Soft 75 fitness challenge.",
-    "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+    "technologies": ["React Native", "Expo"],
     "imageUrl": "https://play-lh.googleusercontent.com/6qIKZG8vjo2ygmvHYYLutQr633U3dMNRcrQ-JjsQszEqdw0cs8GcDeN66tI1TSXvT14=w2560-h1440",
     "githubUrl": "https://github.com/jcsumlin/soft-75",
-    "liveUrl": "https://play.google.com/apps/testing/com.oyyhhwrm.soft75",
-    "featured": false
+    "liveUrl": "https://play.google.com/apps/testing/com.oyyhhwrm.soft75"
   },
   {
     "id": 2,
@@ -16,7 +15,7 @@
     "technologies": ["Python", "Docker", "Discord"],
     "imageUrl": "https://github.com/jcsumlin/Peribot/blob/master/3f8c22095f5a47200dfe99b96ce5dab1_preview.jpeg?raw=true",
     "githubUrl": "https://github.com/jcsumlin/Peribot",
-    "featured": true
+    "liveUrl": "https://bit.ly/peribot"
   },
   {
     "id": 3,
@@ -24,7 +23,8 @@
     "description": " This is a ReactJS application that I made for any Discord server that wants to allow its users to appeal bans. It uses Oauth2 to prevent spam and Discord webhooks to alert moderators of new appeals. Moderators can approve those appeals directly from the webhook message if they want too!",
     "technologies": ["JavaScript", "React", "CSS"],
     "imageUrl": "https://github.com/jcsumlin/discord-ban-appeal/raw/master/img_1.png",
-    "githubUrl": "https://github.com/jcsumlin/discord-ban-appeal"
+    "githubUrl": "https://github.com/jcsumlin/discord-ban-appeal",
+    "liveUrl": "https://wumpus-ban-appeal.netlify.app/"
   },
   {
     "id": 4,
@@ -33,5 +33,13 @@
     "technologies": ["React", "Tailwind CSS", "Framer Motion"],
     "imageUrl": "https://placehold.co/600x400?text=Portfolio",
     "githubUrl": "https://github.com/yourusername/portfolio"
+  },
+  {
+    "id": 5,
+    "title": "Discord Date Time Utility",
+    "description": "A utility bot for Discord that provides various date and time-related features.",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "githubUrl": "https://github.com/jcsumlin/discord-date-time-tool",
+    "liveUrl": "https://discord-time-util.netlify.app/"
   }
 ]
